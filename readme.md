@@ -1,12 +1,10 @@
-<h1>jekyll-gulp-autoprefixer-sass-bourbon-jade-browser-sync</h1>
+# Carlos Gómez - Portfolio
+==================================
+## Hello folks!
+----------------------------------
 
-<p>Windows, Mac, Linux worked.</p>
+This is my main repo from my blog, this would help me to build my portfolio and other personal stuff for my career.
 
-<ol>
-	<li>Ruby installer for Windows - <a target="_blank" href="http://rubyinstaller.org/">rubyinstaller.org</a></li>
-	<li>Install gems - $ gem install jekyll redcarpet rouge</li>
-	<li>NodeJS - use the installer</li>
-	<li>GulpJS - $ npm i -g gulp</li>
-	<li>npm i - in work folder</li>
-	<li>gulp - Run.</li>
-</ol>
+Hope you like it...
+
+Cheers!
