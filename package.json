@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "WebDesign Master",
+  "author": "Carlos Gómez",
   "license": "ISC",
   "devDependencies": {
     "bourbon": "^4.2.6",

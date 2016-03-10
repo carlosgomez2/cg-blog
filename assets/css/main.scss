@@ -6,9 +6,13 @@
 
 // Base
 @import "1-base/base-index";
+@import "1-base/fonts";
 
 // Modules
 @import "2-modules/modules-index";
 
+// Sections
+@import "3-sections/sections-index";
+
 // Layouts
-@import "3-layouts/layouts-index";
+@import "4-layouts/layouts-index";

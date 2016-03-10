@@ -1,0 +1,26 @@
+mixin nav-content()
+	ul
+		li: a(href="#about") About
+		li: a(href="#latest-work") Latest Work
+		li: a(href="#devops") DevOps
+		li: a(href="#pens") Pens
+		li: a(href="#code-stream") Code Stream
+		li: a(href="#contact") Contact
+
+//- is.open class
+.mobile-nav
+	+nav-content()
+
+header
+	.header-position
+		h1.logo Carlos Gomez
+
+		nav.site-nav
+			+nav-content()
+		
+		.social-wrap
+			a(href="#twitter").social Tweets
+			a(href="#facebok").social Facebook
+			
+		.mobile-nav-toggle: span
+				
