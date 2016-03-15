@@ -8,8 +8,9 @@
 .home-sections
   flex: 1
 
+  // padding: 50px 0
   section
-    padding: 50px 0
+    padding: 0
 
   // ---------- Flex classes ----------//
 
@@ -42,7 +43,7 @@
 
 .col-50
   width: 50%
-  background: darkviolet
+  // background: darkviolet
 
 .push-rigth
   margin-left: 330px
@@ -67,8 +68,20 @@
   .push-rigth
     margin-left: 10px
 
+  .padding_t
+    padding-top: 2em
+
+  .padding_b
+    padding-bottom: 2em
+
 // Typography
 
 .home-lead
   font-size: 36px
   line-height: 1.1
+
+  &.outdented
+    text-indent: -0.85em
+
+    @media (max-width: 640px)
+      text-indent: 0

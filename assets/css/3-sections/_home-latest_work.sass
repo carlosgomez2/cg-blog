@@ -1,0 +1,34 @@
+section.latest-work
+.col-1
+  display: flex
+  flex-direction: column
+  justify-content: center
+  // below button padding here!
+  padding-bottom: 6.5em
+
+
+// Images for 1-3 row
+.img1
+  background: url('../img/img1.png')
+
+.img2
+  background: url('../img/img2.png')
+
+.img3
+  background: url('../img/img3.png')
+
+.bkg-work
+  background: url('../img/section-latest_work.png')
+  opacity: 1 !important
+
+.img1, .img2, .img3, .bkg-work
+  background-repeat: no-repeat
+  background-position: center
+  background-size: cover
+  opacity: 0.3
+  transition: all 0.5s ease-in-out
+
+.img1:hover,
+.img2:hover,
+.img3:hover
+  opacity: 1
