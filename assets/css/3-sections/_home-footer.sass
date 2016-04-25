@@ -1,0 +1,30 @@
+.home-footer
+
+  a
+    color: white
+    background: $accent-color
+    display: block
+    width: 100%
+    line-height: 3
+    text-align: center
+    font-size: 60px
+    font-weight: 300
+    transition: background 175ms ease-in-out
+
+    &:hover
+      background: darken($accent-color, 4%)
+
+    @media (max-width: 950px)
+      font-size: 3em
+
+    @media (max-width: 580px)
+      font-size: 2.3em
+
+    @media (max-width: 415px)
+      font-size: 2em
+
+    @media (max-width: 375px)
+      font-size: 1.85em
+
+    @media (max-width: 320px)
+      font-size: 1.65em
