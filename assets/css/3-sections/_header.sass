@@ -18,7 +18,7 @@
       +hide-text
       max-width: 135px
       background:
-        image: url(/assets/img/logo.png)
+        image: url(/assets/img/logo.svg)
         repeat: no-repeat
         position: center
         size: contain
@@ -31,20 +31,46 @@
       ul
         list-style: none
         margin: 20px 0
-        padding: 0 20px 0 0
+        padding: 0 20px 10px 0
         text-align: right
+        font-weight: 500
 
         li
           margin-bottom: 10px
+          letter-spacing: 1px
+          text-transform: uppercase
+
+          a
+          	color: $link-color
+
+          a:hover, a:active
+            color: lighten($secondary-color, 0.4)
+            transition: all 0.3s ease-in-out
 
           &:last-child
             margin-bottom: 0
+
     .social
       display: block
       list-style: none
       margin: 0
-      padding: 0 20px 10px 0
-      text-align: right
+      padding: 0 0 12px 0
+      text-align: center
+      font-size: 1.5rem
+      line-height: 1.2
+
+    .icon-twitter:hover
+      color: $twitter
+
+    .icon-telegram:hover
+      color: $telegram
+
+    .icon-twitter, .icon-telegram
+      color: $social-states
+
+    .icon-twitter:hover, .icon-telegram:hover
+      font-size: 1.9rem
+      transition: all 0.3s ease-in-outy
 
     .mobile-nav-toggle
       width: 50px
@@ -53,11 +79,12 @@
       // background: pink
       display: none
       align-items: center
+      cursor: pointer
 
       span,
       span:before,
       span:after
-        content: ""
+        content: " "
         display: block
         height: 4px
         width: 100%
@@ -67,7 +94,7 @@
         transition: all 0.3s ease-in-out
 
       span:before
-        top: 16px
+        top: 15px
 
       span:after
         top: -19px
@@ -89,11 +116,12 @@
     display: none
     position: absolute
     width: 100%
-    background: rgba(20, 27, 29, 0.80)
+    background: rgba(20, 27, 29, 0.90)
     padding: 30px 0 20px
+    font-size: 1.3rem
 
+    transition: all 0.5s ease-in-out
     transform: translateY(-100%)
-    transition: all 0.3s ease-in-out
 
     ul
       list-style: none
@@ -102,10 +130,16 @@
 
     li
       text-align: center
-      margin-bottom: 10px
+      margin-bottom: 17px
 
+      &:first-child
+        margin-top: 95px
 
+      a
+        color: $link-color
 
+      a:hover, a:active
+        color: lighten($secondary-color, 0.4)
 
 
 //---------- Media Queries ----------//
