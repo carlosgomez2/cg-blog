@@ -31,7 +31,7 @@ _site/
 ### Default ###
 .idea
 node_modules
-_jadefiles
+_jadefiles/*
 js/common.min.js
 
 
