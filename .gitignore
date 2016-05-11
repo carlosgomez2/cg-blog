@@ -40,3 +40,5 @@ gulpfile.js
 package.json
 
 
+assets/js/common.min.js
+assets/js/functions.js
