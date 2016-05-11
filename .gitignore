@@ -1,13 +1,17 @@
 # Created by https://www.gitignore.io/api/linux,jekyll,sass
 
+
 ### Linux ###
 *~
+
 
 # temporary files which can be created if a process still has a handle open of a deleted file
 .fuse_hidden*
 
+
 # KDE directory preferences
 .directory
+
 
 # Linux trash folder which might appear on any partition or disk
 .Trash-*
@@ -23,7 +27,16 @@ _site/
 .sass-cache/
 *.css.map
 
+
 ### Default ###
-_site
 .idea
 node_modules
+_jadefiles
+js/common.min.js
+
+
+### Gulp ###
+gulpfile.js
+package.json
+
+
