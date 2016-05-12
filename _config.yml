@@ -2,3 +2,5 @@ name: Your New Jekyll Site
 markdown: kramdown
 highlighter: rouge # or pygments or null
 exclude: ["node_modules", "gulpfile.js", "package.json"]
+
+baseurl: /Blog
