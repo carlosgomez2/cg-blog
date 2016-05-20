@@ -1,0 +1,44 @@
+section.script
+  .bkg-script
+    background: url('../img/section_script.png')
+    background-repeat: no-repeat
+    background-position: center
+    background-size: cover
+
+  .img-container
+    width: 450px
+    height: 390px
+    border-radius: 3px
+    background: url('../img/script-1.png')
+    background-repeat: no-repeat
+    background-position: center
+    background-size: 450px 390px
+    display: flex
+    flex-direction: row
+    justify-content: space-around
+
+    @media (max-width: 1220px)
+      width: 300px
+      height: 300px
+      background-size: 300px 285px
+      margin: auto !important
+
+      .img-big
+        max-width: 300px
+        margin: auto !important
+
+  @media (max-width: 640px)
+    .img-fix
+      padding-bottom: 0 !important
+
+  .col-1
+    display: flex
+    flex-direction: column
+    justify-content: center
+    // below button padding here!
+    padding-top: 6.5em
+    padding-bottom: 6.5em
+
+    @media (max-width: 640px)
+      padding-top: 4rem
+      padding-bottom: 4rem

@@ -1,10 +1,17 @@
-# Carlos Gómez - Portfolio
-==================================
-## Hello folks!
-----------------------------------
+# Carlos Gómez personal Website Repo
 
-This is my main repo from my blog, this would help me to build my portfolio and other personal stuff for my career.
+Hello folks!
 
-Hope you like it...
+This is my main repo for ma personal website.
 
-Cheers!
+### Tools that I have used
+
+- Jekyll
+- Jade
+- Sass
+- Autoprefixer
+- Gulp
+- Bourbon
+- Browser-sync
+
+Fork from [Github: agragregra](https://github.com/agragregra/jekyll-gulp-autoprefixer-sass-bourbon-jade-browser-sync)
