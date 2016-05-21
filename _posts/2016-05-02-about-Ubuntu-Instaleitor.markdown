@@ -2,7 +2,7 @@
 layout: post
 title:  "About Ubuntu Instaleitor Script"
 date:   2016-05-02 09:39:03
-categories: Devops
+categories: script
 ---
 
 # Hello world from Post
