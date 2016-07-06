@@ -15,3 +15,5 @@ This is my main repo for ma personal website.
 - Browser-sync
 
 Fork from [Github: agragregra](https://github.com/agragregra/jekyll-gulp-autoprefixer-sass-bourbon-jade-browser-sync)
+
+Go to: [Site](https://carlosgomez2.github.io/cg-blog/)
