@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>{{ page.title }}</title>
+    <title>{% if page.title %} {{ page.title }} @ {% endif %} CG</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <!-- Fav -->
     <link rel="apple-touch-icon" sizes="57x57" href="{{ site.baseurl }}/assets/img/fav/apple-touch-icon-57x57.png">
@@ -25,13 +25,21 @@
     <meta name="msapplication-TileImage" content="{{ site.baseurl }}/assets/img/fav/mstile-144x144.png">
     <meta name="theme-color" content="#ffffff">
     <!-- End Fav -->
-    <link rel="stylesheet" href="assets/css/main.min.css">
+    <!-- Styles -->
+    {% if page.type =="post" %}
+      {{ page.styles }}
+    {% else %}
+      <link rel="stylesheet" href="assets/css/main.min.css">
+    {% endif %}
+    <!-- End Styles -->
   </head>
 <body>
   {{ content }}
 </body>
-  <!-- Custom JS -->
-  <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
-  <script src="assets/js/common.js"></script>
-  <script src="assets/js/sweetalert.min.js"></script>
+  {% if page.url == "/index.html" %}
+    <!-- Custom JS -->
+    <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="assets/js/common.js"></script>
+    <script src="assets/js/sweetalert.min.js"></script>
+  {% endif %}
 </html>
