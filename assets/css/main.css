@@ -1,17 +1,18 @@
 /*
-Error: File to import not found or unreadable: ../../../css/plugins/plugin-dir.
-       Load path: /home/rasalghul/Dropbox/PROYECTOS/portafolio v2/Blog/assets/post-assets/_new/css
-        on line 1 of /home/rasalghul/Dropbox/PROYECTOS/portafolio v2/Blog/assets/post-assets/_new/css/style.sass
+Error: File to import not found or unreadable: bourbon.
+       Load path: /home/rasalghul/Dropbox/PROYECTOS/portafolio v2/Blog/assets/css
+        on line 2 of /home/rasalghul/Dropbox/PROYECTOS/portafolio v2/Blog/assets/css/main.scss
 
-1: @import '../../../css/plugins/plugin-dir'
-2: 
-3: // post styles here...
-4: 
-5: 
+1: 
+2: @import "bourbon";
+3: 
+4: // Tools
+5: @import "0-tools/tools-index";
 6: 
+7: // Base
 
 Backtrace:
-/home/rasalghul/Dropbox/PROYECTOS/portafolio v2/Blog/assets/post-assets/_new/css/style.sass:1
+/home/rasalghul/Dropbox/PROYECTOS/portafolio v2/Blog/assets/css/main.scss:2
 /usr/share/koala/rubygems/gems/sass-3.4.9/lib/sass/tree/import_node.rb:66:in `rescue in import'
 /usr/share/koala/rubygems/gems/sass-3.4.9/lib/sass/tree/import_node.rb:45:in `import'
 /usr/share/koala/rubygems/gems/sass-3.4.9/lib/sass/tree/import_node.rb:28:in `imported_file'
@@ -49,4 +50,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: File to import not found or unreadable: ../../../css/plugins/plugin-dir.\A        Load path: /home/rasalghul/Dropbox/PROYECTOS/portafolio v2/Blog/assets/post-assets/_new/css\A         on line 1 of /home/rasalghul/Dropbox/PROYECTOS/portafolio v2/Blog/assets/post-assets/_new/css/style.sass\A \A 1: @import '../../../css/plugins/plugin-dir'\A 2: \A 3: // post styles here...\A 4: \A 5: \A 6: "; }
+  content: "Error: File to import not found or unreadable: bourbon.\A        Load path: /home/rasalghul/Dropbox/PROYECTOS/portafolio v2/Blog/assets/css\A         on line 2 of /home/rasalghul/Dropbox/PROYECTOS/portafolio v2/Blog/assets/css/main.scss\A \A 1: \A 2: @import \"bourbon\";\A 3: \A 4: // Tools\A 5: @import \"0-tools/tools-index\";\A 6: \A 7: // Base"; }
