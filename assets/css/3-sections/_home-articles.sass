@@ -11,50 +11,53 @@ section.articles
     @media (min-width: 640px)
       padding-bottom: 0 !important
 
-  .article-thumb
+  .article-wrap
     display: block
-    background:
-      size: cover
-      position: center
-    width: 33.33%
-    float: left
-    position: relative
-    overflow: hidden
-
-    &:after
-      content: ''
+    a
+    .article-thumb
       display: block
-      padding-top: 100%
+      background:
+        size: cover
+        position: center
+      width: 33.33%
+      float: left
+      position: relative
+      overflow: hidden
 
-  .article-meta
-    position: absolute
-    top: 0
-    left: 0
-    right: 0
-    bottom: 0
-    background: fade-out($selection-color, 0.4)
-    color: white
-    padding: 10px
+      &:after
+        content: ''
+        display: block
+        padding-top: 100%
 
-    transform: translate(0%, 100%) scale (0.2)
-    transition: all 0.8s cubic-bezier(0.74, 0.24, 0.18, 1.02)
-    opacity: 0
+    .article-meta
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      background: fade-out($selection-color, 0.4)
+      color: white
+      padding: 10px
 
-    .name
-      font-size: 11px
-      font-weight: bold
-      line-height: 1.2
+      transform: translate(0%, 100%) scale (0.5)
+      transition: all 0.8s cubic-bezier(0.74, 0.24, 0.18, 1.02)
+      opacity: 0
 
-    .date
-      font-size: 10px
-      font-style: italic
+      .name
+        font-size: 11px
+        font-weight: bold
+        line-height: 1.2
 
-    .name, .date
-      text-align: right
+      .date
+        font-size: 10px
+        font-style: italic
 
-  .article-thumb:hover .article-meta
-    opacity: 1
-    transform: translate(0%, 0%) scale(1)
+      .name, .date
+        text-align: right
+
+    .article-thumb:hover .article-meta
+      opacity: 1
+      transform: translate(0%, 0%) scale(1)
 
 
   @media (max-width: 640px)
