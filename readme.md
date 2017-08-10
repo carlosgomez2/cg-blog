@@ -2,7 +2,7 @@
 
 Hello folks!
 
-This is my main repo for ma personal website.
+This is my main repo for my personal website.
 
 ### Tools that I have used
 
