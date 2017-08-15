@@ -1,0 +1,48 @@
+.social-mobile
+  // background-color: tomato
+  display: none
+  @media (max-width: 775px)
+    // Flex properties
+    display: flex
+    flex-direction: row
+  .social-icons
+    // background-color: rgba(0.5, 0.4, 0.3, 0.6)
+    width: 100%
+    height: 50px
+    a
+      // background-color: pink
+      box-sizing: border-box
+      height: 100%
+      width: 100%
+      // Flex properties
+      display: flex
+      justify-content: center
+      align-items: center
+      align-content: center
+    .social-mobile
+      font-size: 1.5rem
+    .gh
+      background-color: black
+      &:hover
+        background-color: $text-color
+        color: black
+    .in
+      background-color: $linkedin
+      &:hover
+        background-color: $text-color
+        color: $linkedin
+    .tw
+      background-color: $twitter
+      &:hover
+        background-color: $text-color
+        color: $twitter
+    .tg
+      background-color: $telegram
+      &:hover
+        background-color: $text-color
+        color: $telegram
+        cursor: pointer !important
+    .gh, .in, .tw, .tg
+      color: $text-color
+      &:hover
+        transition: all 0.8s ease-in-out
