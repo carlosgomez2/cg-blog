@@ -18,7 +18,7 @@
 
 
 ### Jekyll ###
-_site/
+#_site/
 .sass-cache/
 .jekyll-metadata
 
@@ -30,14 +30,14 @@ _site/
 
 ### Default ###
 .idea
-node_modules
-_jadefiles/*
+#node_modules
+#_jadefiles/*
 js/common.min.js
 
 
 ### Gulp ###
-gulpfile.js
-package.json
+#gulpfile.js
+#package.json
 
 
 assets/js/common.min.js

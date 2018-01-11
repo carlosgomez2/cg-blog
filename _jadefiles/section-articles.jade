@@ -1,0 +1,47 @@
+//- mixin thumb
+//-   a(href="#" style="background-image: url(http://fillmurray.com/230/500)").article-thumb
+//-     .article-meta
+//-       .name Article Name
+//-       .date 24, Apr 2016
+//-
+//- section#articles.articles
+//-   .flex.flex--center
+//-     .col-50.flex.flex--center
+//-       .col-1
+//-         .desc-wrap
+//-           p.home-lead.outdented ...Building & Writing some stuff fot this site...
+//-           a(target="_blank" href="/posts").home-cta LEE MIS ARTICULOS
+//-
+//-     .col-50
+//-       .article-wrap
+//-         +thumb
+//-         +thumb
+//-         +thumb
+//-         +thumb
+//-         +thumb
+//-         +thumb
+//-         +thumb
+//-         +thumb
+//-         +thumb
+//-         +thumb
+//-         +thumb
+//-         +thumb
+
+// Jekyll
+
+section#articles.articles
+  .flex.flex--center
+    .col-50.flex.flex--center
+      .col-1
+        .desc-wrap
+          p.home-lead.outdented ...Building & Writing some stuff for this site...
+          a(target="_blank" href="/posts").home-cta SEE MY STUFF
+
+    .col-50
+      .article-wrap
+        {% for post in site.posts limit: 12 %}
+        a(href="{{post.url}}" style="background-image: url({{post.cover}})").article-thumb
+          .article-meta
+            .name {{post.title}}
+            .date {{post.date | date: "%b %d, %Y"}}
+        {% endfor %}
