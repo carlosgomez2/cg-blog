@@ -34,14 +34,14 @@ section#articles.articles
     .col-50.flex.flex--center
       .col-1
         .desc-wrap
-          p.home-lead.outdented ...Building & Writing some stuff for this site...
+          p.home-lead.outdented ...Building  Writing some stuff for this site...
           a(target="_blank" href="/posts").home-cta SEE MY STUFF
 
     .col-50
       .article-wrap
-        {% for post in site.posts limit: 12 %}
+        | {% for post in site.posts limit: 12 %}
         a(href="{{post.url}}" style="background-image: url({{post.cover}})").article-thumb
           .article-meta
             .name {{post.title}}
             .date {{post.date | date: "%b %d, %Y"}}
-        {% endfor %}
+        | {% endfor %}
