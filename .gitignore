@@ -36,7 +36,7 @@ js/common.min.js
 
 
 ### Gulp ###
-gulpfile.js
+# gulpfile.js
 package.json
 
 

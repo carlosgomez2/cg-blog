@@ -10,8 +10,8 @@
   "license": "ISC",
   "devDependencies": {
     "bourbon": "^5.0.0",
-    "browser-sync": "^2.11.0",
-    "gulp": "^3.9.0",
+    "browser-sync": "^2.24.6",
+    "gulp": "^4.0.0",
     "gulp-autoprefixer": "^4.1.0",
     "gulp-concat": "^2.6.0",
     "gulp-jade": "^1.1.0",
@@ -20,7 +20,7 @@
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
     "gulp-uglify": "^3.0.0",
-    "jshint": "^2.9.1"
+    "jshint": "^2.9.6"
   },
   "repository": {
     "type": "git",
@@ -37,5 +37,9 @@
   "bugs": {
     "url": "https://github.com/agragregra/jekyll-gulp-autoprefixer-sass-bourbon-jade-browser-sync/issues"
   },
-  "homepage": "https://github.com/agragregra/jekyll-gulp-autoprefixer-sass-bourbon-jade-browser-sync"
+  "homepage": "https://github.com/agragregra/jekyll-gulp-autoprefixer-sass-bourbon-jade-browser-sync",
+  "dependencies": {
+    "gulp-install": "^1.1.0",
+    "gulp-pug": "^4.0.1"
+  }
 }
