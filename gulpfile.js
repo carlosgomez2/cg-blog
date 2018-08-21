@@ -84,8 +84,10 @@ gulp.task('sass', function(done) {
     .pipe(minifycss())
 
     .pipe(gulp.dest(paths.styles.dest[0]))
-    .pipe(gulp.dest(paths.styles.dest[1]))
-    .pipe(browserSync.reload({stream:true}));
+    .pipe(gulp.dest(paths.styles.dest[1]));
+    // .pipe(browserSync.reload({
+    //   stream: true
+    // }));
     done();
 });
 
@@ -111,7 +113,7 @@ gulp.task('js', function() {
 // Watch changes on files
 gulp.task('watch', function() {
   gulp.watch(paths.scripts.all, gulp.series('js')).on('change', browserSync.reload);
-  gulp.watch(paths.styles.all, gulp.series('sass'));
+  gulp.watch(paths.styles.all, gulp.series('sass')).on('change', browserSync.reload);
   gulp.watch(paths.html.src, gulp.series('jekyll-rebuild'));
   gulp.watch(paths.pugFiles.src, gulp.series('pug')).on('change', browserSync.reload);
 });
