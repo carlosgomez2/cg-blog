@@ -1,19 +1,34 @@
 # Carlos Gómez personal Website Repo
 
-Hello folks!
+Jekyll portfolio blog for bussiness
 
-This is my main repo for my personal website.
+## Setup
+
+- $ gem install jekyll redcarpet rouge
+- $ npm i -g gulp
+- $ npm i (in work folder)
+- $ gulp
+
+## Tested in
+
+- node version:     10.9.0
+- npm version:      6.4.0
+- gulp version:     4.0.0
+- gulp-cli version: 2.0.1
+- jekyll version:   3.8.3
+
+Status: Passing 20/08/18
 
 ### Tools that I have used
 
 - Jekyll
-- Jade
+- Jade -> migration to Pug
 - Sass
 - Autoprefixer
-- Gulp
+- Gulp 4
 - Bourbon
 - Browser-sync
 
-Fork from [Github: agragregra](https://github.com/agragregra/jekyll-gulp-autoprefixer-sass-bourbon-jade-browser-sync)
+Fork from [Github: carlosgomez2](https://github.com/carlosgomez2/jekyll-gulp-autoprefixer-sass-bourbon-jade-browser-sync)
 
-Go to: [Site](https://carlosgomez2.github.io/cg-blog/)
+Live [Site](https://carlosgomez2.github.io/cg-blog/)
