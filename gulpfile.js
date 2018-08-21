@@ -1,18 +1,21 @@
-// Gulp 4 syntax migration
+// Gulp 4 syntax migration & Refactor
 
 // Global Dependencies
 var gulp        = require('gulp');
 var browserSync = require('browser-sync').create();
 var cp          = require('child_process');
+var rename      = require('gulp-rename');
 // HTML Dependencies
 var pug         = require('gulp-pug');
-// Sass Dependencies
+// Css Dependencies
 var sass        = require('gulp-sass');
 var prefix      = require('gulp-autoprefixer');
 var minifycss   = require('gulp-minify-css');
 var bourbon     = require('bourbon').includePaths;
-var rename      = require('gulp-rename');
 // JS Dependencies
+var jshint      = require('gulp-jshint');
+var concat      = require('gulp-concat');
+var uglify      = require('gulp-uglify');
 
 // Message
 var messages = {
@@ -35,9 +38,9 @@ var paths = {
     dest: ['assets/css', '_site/assets/css']
   },
   scripts: {
-    all: ['assets/js/**/*.js', 'js/*.js'],
-    src: 'assets/js/common.js',
-    dest: ['js', '_site/assets/js', '_site/js']
+    all:  'assets/js/**/*.js',
+    src:  'assets/js/common.js',
+    dest: '_site/assets/js'
   }
 }
 
@@ -99,17 +102,15 @@ gulp.task('js', function() {
     .pipe(jshint())
     .pipe(jshint.reporter('default'))
     .pipe(concat('common.js'))
-    .pipe(gulp.dest(paths.scripts.dest[0]))
+    .pipe(gulp.dest(paths.scripts.dest))
     .pipe(rename({suffix: '.min'}))
     .pipe(uglify())
-    .pipe(gulp.dest(paths.scripts.dest[0]))
-    .pipe(gulp.dest(paths.scripts.dest[1]))
-    .pipe(gulp.dest(paths.scripts.dest[2]));
+    .pipe(gulp.dest(paths.scripts.dest));
 });
 
 // Watch changes on files
 gulp.task('watch', function() {
-  gulp.watch(paths.scripts.all).on('change', browserSync.reload);
+  gulp.watch(paths.scripts.all, gulp.series('js')).on('change', browserSync.reload);
   gulp.watch(paths.styles.all, gulp.series('sass'));
   gulp.watch(paths.html.src, gulp.series('jekyll-rebuild'));
   gulp.watch(paths.pugFiles.src, gulp.series('pug')).on('change', browserSync.reload);
@@ -117,5 +118,3 @@ gulp.task('watch', function() {
 
 // Main task
 gulp.task('default', gulp.series('serve', gulp.parallel('watch')));
-
-// gulp.parallel('sass', 'pug', 'watch', 'jekyll-build')

@@ -32,5 +32,3 @@ function smoothScroll (duration) {
 	    }
 	});
 }
-
-// prueba 2 3 y 4
