@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('../fonts/icons/icomoon.eot?fu6t3h');
-  src:  url('../fonts/icons/icomoon.eot?fu6t3h#iefix') format('embedded-opentype'),
-    url('../fonts/icons/icomoon.ttf?ukgaww') format('truetype'),
-    url('../fonts/icons/icomoon.woff?fu6t3h') format('woff'),
-    url('../fonts/icons/icomoon.svg?fu6t3h#icomoon') format('svg');
+  src:  url('../fonts/icons/icomoon.eot?fqhj5j');
+  src:  url('../fonts/icons/icomoon.eot?fqhj5j#iefix') format('embedded-opentype'),
+    url('../fonts/icons/icomoon.ttf?fqhj5j') format('truetype'),
+    url('../fonts/icons/icomoon.woff?fqhj5j') format('woff'),
+    url('../fonts/icons/icomoon.svgfonts/icomoon.svg?fqhj5j#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -24,39 +24,132 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-github_02:before {
-  content: "\e900";
-  color: black;
+.icon-archlinux:before {
+  content: "\e905";
+  // color: #1793d1;
+}
+.icon-css3:before {
+  content: "\e906";
+  // color: #1572b6;
+}
+.icon-csswizardry:before {
+  content: "\e907";
+  // color: #f43059;
+}
+.icon-devto:before {
+  // content: "\e908";
+}
+.icon-digitalocean:before {
+  content: "\e909";
+  // color: #0080ff;
+}
+.icon-docker:before {
+  content: "\e90a";
+  // color: #1488c6;
+}
+.icon-git:before {
+  content: "\e90b";
+  // color: #f05032;
 }
 .icon-gitlab_02:before {
-  content: "\e901";
-  color: #e24329;
+  content: "\e90c";
+  // color: #e24329;
 }
-.icon-linkedin_02:before {
+.icon-gulp:before {
+  content: "\e90d";
+  // color: #da4648;
+}
+.icon-heroku:before {
+  content: "\e90e";
+  // color: #430098;
+}
+.icon-instagram:before {
+  content: "\e901";
+  // color: #e4405f;
+}
+.icon-linkedin:before {
   content: "\e902";
-  color: #0077b5;
+  // color: #0077b5;
+}
+.icon-linux:before {
+  content: "\e90f";
+  // color: #fcc624;
+}
+.icon-meteor:before {
+  content: "\e910";
+  // color: #de4f4f;
+}
+.icon-mysql:before {
+  content: "\e911";
+  // color: #4479a1;
+}
+.icon-npm:before {
+  content: "\e912";
+  // color: #cb3837;
+}
+.icon-rails:before {
+  content: "\e913";
+  // color: #c00;
+}
+.icon-redis:before {
+  content: "\e914";
+  // color: #d82c20;
+}
+.icon-ruby:before {
+  content: "\e915";
+  // color: #cc342d;
+}
+.icon-sass:before {
+  content: "\e916";
+  // color: #c69;
+}
+.icon-shopify:before {
+  content: "\e917";
+  // color: #7ab55c;
 }
 .icon-telegram_02:before {
   content: "\e903";
-  color: #2ca5e0;
+  // color: #2ca5e0;
 }
 .icon-twitter_02:before {
   content: "\e904";
-  color: #1da1f2;
+  // color: #1da1f2;
+}
+.icon-ubuntu:before {
+  content: "\e918";
+  // color: #e95420;
+}
+.icon-vuejs:before {
+  content: "\e919";
+  // color: #4fc08d;
+}
+.icon-wordpress:before {
+  content: "\e91a";
+  // color: #21759b;
 }
 .icon-love:before {
   content: "\e9da";
-  color: #F06292;
+  // color: #F06292;
+}
+.icon-embed2:before {
+  content: "\ea80";
+}
+.icon-terminal:before {
+  content: "\ea81";
 }
 .icon-telegram:before {
   content: "\ea95";
+  // color: #2ca5e0;
 }
 .icon-twitter:before {
   content: "\ea96";
+  // color: #1da1f2;
 }
 .icon-github:before {
   content: "\eab0";
+  // color: black;
 }
-.icon-linkedin:before {
+.icon-linkedin_02:before {
   content: "\eaca";
+  // color: #0077b5;
 }
