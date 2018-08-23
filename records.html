@@ -1,0 +1,23 @@
+---
+layout: default
+title: Records
+type: record
+permalink: /records/
+styles: <link rel="stylesheet" href="/assets/others/records/main.css" type="text/css" media="screen" />
+---
+
+<div class="container">
+  <h1>For the Record</h1>
+  <ul>
+    {% for post in site.posts %}
+    <li>
+      <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+      <p><small><strong>{{ post.date | date: "%B %e, %Y" }}</strong></small></p>
+    </li>
+    {% endfor %}
+  </ul>
+
+  <div>
+    <a href="/" class="link-back">Go Back</a>
+  </div>
+</div>

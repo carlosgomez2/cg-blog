@@ -41,6 +41,9 @@ var paths = {
     all:  'assets/js/**/*.js',
     src:  'assets/js/common.js',
     dest: '_site/assets/js'
+  },
+  others: {
+    src: 'assets/others/**/*.css'
   }
 }
 
@@ -114,6 +117,7 @@ gulp.task('js', function() {
 gulp.task('watch', function() {
   gulp.watch(paths.scripts.all, gulp.series('js')).on('change', browserSync.reload);
   gulp.watch(paths.styles.all, gulp.series('sass')).on('change', browserSync.reload);
+  gulp.watch(paths.others.src, gulp.series('jekyll-rebuild')).on('change', browserSync.reload);
   gulp.watch(paths.html.src, gulp.series('jekyll-rebuild'));
   gulp.watch(paths.pugFiles.src, gulp.series('pug')).on('change', browserSync.reload);
 });

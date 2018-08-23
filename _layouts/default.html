@@ -28,6 +28,8 @@
     <!-- Styles -->
     {% if page.type =="post" %}
       {{ page.styles }}
+    {% elsif page.type == "record" %}
+      {{ page.styles }}
     {% else %}
       <link rel="stylesheet" href="assets/css/main.min.css">
     {% endif %}
