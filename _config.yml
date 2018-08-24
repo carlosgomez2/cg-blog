@@ -1,4 +1,5 @@
 name: Carlos Gomez
+title: Carlos Gomez
 markdown: kramdown
 highlighter: rouge # or pygments or null
 exclude: ["node_modules",

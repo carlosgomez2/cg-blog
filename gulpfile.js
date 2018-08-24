@@ -17,11 +17,6 @@ var jshint      = require('gulp-jshint');
 var concat      = require('gulp-concat');
 var uglify      = require('gulp-uglify');
 
-// Message
-var messages = {
-    jekyllBuild: '<span style="color: white">Running:</span> $ jekyll build'
-};
-
 // Paths
 var paths = {
   html: {
@@ -47,7 +42,10 @@ var paths = {
 
 // Build Jekyll
 gulp.task('jekyll-build', function (done) {
-  return cp.spawn("bundle", ["exec", "jekyll", "build"], { stdio: "inherit" });
+  browserSync.notify('<span style="color: grey">Running:</span> $ jekyll build');
+  cp.spawn("bundle", ["exec", "jekyll", "build", "--incremental", "--watch"], { stdio: "inherit" });
+  cp.spawn("bundle", ["exec", "jekyll", "serve", "--watch"], { stdio: "inherit" });
+  done();
 });
 
 // Rebuild Jekyll site
@@ -113,10 +111,13 @@ gulp.task('js', function() {
 
 // Watch changes on files
 gulp.task('watch', function() {
+  // Scripts
   gulp.watch(paths.scripts.all, gulp.series('js')).on('change', browserSync.reload);
+  // Styles
   gulp.watch(paths.styles.all, gulp.series('sass')).on('change', browserSync.reload);
   gulp.watch(paths.styles.others[0], gulp.series('jekyll-rebuild')).on('change', browserSync.reload);
   gulp.watch(paths.styles.others[1], gulp.series('jekyll-rebuild')).on('change', browserSync.reload);
+  // HTML
   gulp.watch(paths.html.src, gulp.series('jekyll-rebuild'));
   gulp.watch(paths.pugFiles.src, gulp.series('pug')).on('change', browserSync.reload);
 });
