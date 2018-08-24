@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css?family=Bitter:400,700|Ubuntu+Mono')
+
+$base-font: 'Bitter', serif
+$mono-font: 'Ubuntu Mono', monospace
+$base-font-size: 16px
+$base-font-weight: 400
+$small-font-size: $base-font-size * 0.875
+$base-line-height: 1.5
+
+$spacing-unit:     30px
+
+$text-color:       #111
+$background-color: #fdfdfd
+$brand-color:      #2568ba
+
+$grey-color:       #828282
+$grey-color-light: lighten($grey-color, 40%)
+$grey-color-border: lighten($grey-color, 2%)
+$grey-color-dark:  darken($grey-color, 25%)
+
+// Width of the content area
+$content-width:    800px
+
+body
+  background-color: $background-color
+  word-wrap: break-word
+  overflow-wrap: break-word
+
+h1, h2, h3, h4, h5, h6
+  font-family: $base-font
+  font-weight: 700
+
+p, a
+  font-family: $base-font
+
+.container
+  width: $content-width
+  margin: 0 auto
+
+code
+  font-family: $mono-font
+  padding: 1rem
+  display: block
+  background-color: #f8f8f8
+
+code, samp
+  overflow: scroll
+
+.code-container
+  border-radius: 5px
+
+.date
+  color: $grey-color
+  font-size: $small-font-size
+
+.img-responsive
+  width: 100%
+  object-fit: contain
+  @media (max-width: 830px)
+    width: 90vw
+    margin: 0 auto
