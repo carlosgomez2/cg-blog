@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="theme-color" content="#141b1d" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title> Dummy @  CG</title>
+    <title> Problemas @  CG</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <!-- Fav -->
     <link rel="apple-touch-icon" sizes="57x57" href="/cg-blog/assets/img/fav/apple-icon-57x57.png">
@@ -27,17 +27,42 @@
     <!-- End Fav -->
     <!-- Styles -->
     
-      <link rel="stylesheet" href="/assets/post-assets/005-dummy/css/main.css" type="text/css" media="screen" />
+      <link rel="stylesheet" href="assets/css/main.min.css">
     
     <!-- End Styles -->
   </head>
 <body>
-  <!-- <h2>Dummy</h2>
-<p class="meta">05 Oct 2016</p> -->
+  <h1 id="problemas">Problemas</h1>
 
-<div class="post">
+<ul>
+  <li>existen 2 ambientes: desarrollo y produccion(github pages)</li>
+</ul>
 
-</div>
+<p>Los problemas son los siguientes:</p>
+
+<ul>
+  <li>en desarrollo hay que utilizar la ruta absoluta /assets/ruta/main.css</li>
+  <li>en produccion o la gema de github o el sitio jekyll serve /cg-blog/assets/ruta/main.css</li>
+</ul>
+
+<p>El problema principal es que en development tengo la ruta localhost:3000/assets/…
+en produccion tengo carlosgomez2.github.io/cg-blog/assets/…</p>
+
+<p>cuando pongo los vinculos absolutos se recorre un directorio y no encuentra las carpetas</p>
+
+<h2 id="posibles-soluciones">Posibles soluciones</h2>
+
+<ul>
+  <li>
+    <p>ya probe incluyendo un hack para liquid que setea el base a baseurl y solo se requiere incluir a un parcial para que funcione, pero solo funciona bien bajo desarrollo, en produccion ya no</p>
+  </li>
+  <li>
+    <p>CAMBIAR TODO AL AMBIENTE DE PRODUCCION, lo cual es lo que estoy haciendo, /cg-blog va a estar prefijado en todos los vinculos y src, ya no va a funcionar el ambiente de desarrollo, cuando suba a github-pages en teoria deberia de funcionar las rutas</p>
+  </li>
+  <li>
+    <p>En los styles que estan embebidos en .md o en el post .html hay que cambiar el path de src /cg-blog/assets/…ahi no funciona /cg-blog</p>
+  </li>
+</ul>
 
 </body>
   
