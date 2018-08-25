@@ -1,9 +1,12 @@
 name: Carlos Gomez
+title: Carlos Gomez
 markdown: kramdown
 highlighter: rouge # or pygments or null
 exclude: ["node_modules",
   "gulpfile.js",
   "package.json",
-  "README.md"]
+  "README.md",
+  "Gemfile",
+  "Gemfile.lock"]
 
-baseurl: /Blog
+baseurl: /cg-blog

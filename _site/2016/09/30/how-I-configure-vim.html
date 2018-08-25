@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="theme-color" content="#141b1d" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title> How I configure Vim @  CG</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Fav -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/cg-blog/assets/img/fav/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/cg-blog/assets/img/fav/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/cg-blog/assets/img/fav/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/cg-blog/assets/img/fav/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/cg-blog/assets/img/fav/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/cg-blog/assets/img/fav/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/cg-blog/assets/img/fav/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/cg-blog/assets/img/fav/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/cg-blog/assets/img/fav/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/cg-blog/assets/img/fav/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/cg-blog/assets/img/fav/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/cg-blog/assets/img/fav/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/cg-blog/assets/img/fav/favicon-16x16.png">
+    <link rel="manifest" href="/cg-blog/assets/img/fav/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/cg-blog/assets/img/fav/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <!-- End Fav -->
+    <!-- Styles -->
+    
+      <link rel="stylesheet" href="/cg-blog/assets/post-assets/006-vim/css/main.css" type="text/css" media="screen" /> <link rel="stylesheet" href="/cg-blog/assets/post-assets/006-vim/css/github.css" type="text/css" media="screen" />
+    
+    <!-- End Styles -->
+  </head>
+<body>
+  <!-- <h2>How I configure Vim</h2>
+<p class="meta">30 Sep 2016</p> -->
+
+<div class="post">
+<div class="container">
+
+  <h1 id="vim-configuration">Vim Configuration</h1>
+
+  <p class="date">September 30, 2016</p>
+
+  <h2 id="download-vundler-for-vim">Download Vundler for Vim</h2>
+
+  <p>Download <a href="https://github.com/VundleVim/Vundle.vim">Vundler</a> from clone repo:</p>
+
+  <p><code class="highlighter-rouge">git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim</code></p>
+
+  <h2 id="create-and-set-vimrc">Create and set .vimrc</h2>
+
+  <p><code class="highlighter-rouge">​cd &amp;&amp; touch .vimrc</code>​</p>
+
+  <h2 id="the-configuration">The configuration</h2>
+
+  <div class="code-container">
+    <div class="language-viml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c">" be iMproved, no compatibility with VI</span>
+    <span class="k">set</span> nocompatible
+
+    <span class="c">" Auto indention should be on</span>
+    <span class="k">set</span> autoindent
+
+    <span class="c">" Allows move with the mouse in all windows</span>
+    <span class="k">set</span> mouse<span class="p">=</span><span class="k">a</span>
+
+    <span class="c">" Theme and syntax</span>
+    syntax <span class="k">on</span>
+
+    <span class="c">" Syntax highlighting and theme</span>
+    syntax enable
+
+    <span class="c">" Lovely linenumbers</span>
+    <span class="k">set</span> <span class="k">nu</span>
+
+    <span class="c">" Searching, highligths the areas that you search for</span>
+    <span class="k">set</span> hlsearch
+
+    <span class="c">" Highlights search as you type</span>
+    <span class="k">set</span> incsearch
+
+    <span class="c">" ignores the case in the file</span>
+    <span class="k">set</span> ignorecase
+
+    <span class="c">" If you start with CamelCase it will assume that you wanted camelcased</span>
+    <span class="k">set</span> smartcase
+
+    <span class="c">" For initialize blunde</span>
+    <span class="k">filetype</span> off
+    <span class="k">set</span> rtp<span class="p">+=~</span><span class="sr">/.vim/</span>bundle/Vundle<span class="p">.</span><span class="k">vim</span>
+    <span class="k">call</span> vundle#rc<span class="p">()</span>
+
+    <span class="c">" Dependencies of snipmate</span>
+    Bundle <span class="s2">"MarcWeber/vim-addon-mw-utils"</span>
+    Bundle <span class="s2">"tomtom/tlib_vim"</span>
+    Bundle <span class="s2">"honza/vim-snippets"</span>
+
+    <span class="c">" Snippets for our use</span>
+    Bundle <span class="s1">'garbas/vim-snipmate'</span>
+
+    <span class="c">" Git integration tools</span>
+    Bundle <span class="s1">'tpope/vim-fugitive'</span>
+
+    <span class="c">" Dependency managment Vundle</span>
+    Bundle <span class="s1">'gmarik/vundle'</span>
+
+    <span class="c">" Rails highlighting</span>
+    Bundle <span class="s1">'tpope/vim-rails.git'</span>
+
+    <span class="c">" Vim Ruby highlighting</span>
+    Bundle <span class="s1">'vim-ruby/vim-ruby'</span>
+
+    <span class="c">" Surround your code, changes curly braces, p, div, tags etc.</span>
+    Bundle <span class="s1">'tpope/vim-surround'</span>
+
+    <span class="c">" Every one should have a pair (Autogenerate pairs for "{[( )</span>
+    Bundle <span class="s1">'jiangmiao/auto-pairs'</span>
+
+    <span class="c">" Tab completions, autocomplete somethig that VIM already opened</span>
+    Bundle <span class="s1">'ervandew/supertab'</span>
+
+    <span class="c">" Fuzzy finder for vim (CTRL+P)</span>
+    Bundle <span class="s1">'kien/ctrlp.vim'</span>
+
+    <span class="c">" For tests</span>
+    Bundle <span class="s1">'janko-m/vim-test'</span>
+
+    <span class="c">" Navigation tree, like atom or sublime</span>
+    Bundle <span class="s1">'scrooloose/nerdtree'</span>
+    autocmd vimenter * NERDTree
+
+    autocmd bufenter * <span class="k">if</span> <span class="p">(</span>winnr<span class="p">(</span><span class="s2">"$"</span><span class="p">)</span> <span class="p">==</span> <span class="m">1</span> &amp;&amp; exists<span class="p">(</span><span class="s2">"b:NERDTree"</span><span class="p">)</span> &amp;&amp; <span class="nv">b:NERDTree</span><span class="p">.</span>isTabTree<span class="p">())</span> <span class="p">|</span> <span class="k">q</span> <span class="p">|</span> <span class="k">endif</span>
+
+    <span class="c">" Quantum theme</span>
+    Bundle <span class="s1">'tyrannicaltoucan/vim-quantum'</span>
+
+    <span class="c">" NERD Commenter</span>
+    Plugin <span class="s1">'scrooloose/nerdcommenter'</span>
+    <span class="k">filetype</span> plugin <span class="k">on</span>
+    <span class="k">let</span> mapleader<span class="p">=</span><span class="s2">","</span>
+    <span class="k">set</span> timeout timeoutlen<span class="p">=</span><span class="m">1500</span>
+</code></pre></div>    </div>
+  </div>
+
+  <h2 id="install-plugins">Install Plugins</h2>
+
+  <p>Launch <code class="highlighter-rouge">vim</code> and run <code class="highlighter-rouge">:PluginInstall</code></p>
+
+  <p>To install from command line: <code class="highlighter-rouge">vim +PluginInstall +qall</code></p>
+
+  <h2 id="conclusion">Conclusion</h2>
+
+  <p>That is it, Vim now has superpowers!</p>
+
+  <p><img src="/cg-blog/assets/post-assets/006-vim/img/vim_shot_1.png" alt="vim" class="img-responsive" /></p>
+
+  <p><img src="/cg-blog/assets/post-assets/006-vim/img/vim_shot_2.png" alt="vim fuzzy finder" class="img-responsive" /></p>
+
+  <hr />
+
+  <h4 class="date" id="carlos-gomez-2018">Carlos Gomez 2018</h4>
+</div>
+
+</div>
+
+</body>
+  
+</html>

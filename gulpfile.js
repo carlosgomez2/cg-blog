@@ -17,11 +17,6 @@ var jshint      = require('gulp-jshint');
 var concat      = require('gulp-concat');
 var uglify      = require('gulp-uglify');
 
-// Message
-var messages = {
-    jekyllBuild: '<span style="color: white">Running:</span> $ jekyll build'
-};
-
 // Paths
 var paths = {
   html: {
@@ -35,21 +30,22 @@ var paths = {
   styles: {
     all: 'assets/css/**',
     src: 'assets/css/main.scss',
-    dest: ['assets/css', '_site/assets/css']
+    dest: ['assets/css', '_site/assets/css'],
+    others: ['assets/others/**/*.css', 'assets/post-assets/**/*.css']
   },
   scripts: {
     all:  'assets/js/**/*.js',
     src:  'assets/js/common.js',
     dest: '_site/assets/js'
-  },
-  others: {
-    src: 'assets/others/**/*.css'
   }
 }
 
 // Build Jekyll
 gulp.task('jekyll-build', function (done) {
-  return cp.spawn("bundle", ["exec", "jekyll", "build"], { stdio: "inherit" });
+  browserSync.notify('<span style="color: grey">Running:</span> $ jekyll build');
+  cp.spawn("bundle", ["exec", "jekyll", "build"], { stdio: "inherit" })
+  cp.spawn("bundle", ["exec", "jekyll", "serve", "--watch"], { stdio: "inherit" });
+  done();
 });
 
 // Rebuild Jekyll site
@@ -64,7 +60,8 @@ gulp.task('jekyll-rebuild',
 gulp.task('serve', function(done) {
   browserSync.init({
     server: {
-      baseDir: '_site'
+      baseDir: '_site',
+      proxy: 'http://127.0.0.1:4000/cg-blog/'
     }
   });
   done();
@@ -115,9 +112,13 @@ gulp.task('js', function() {
 
 // Watch changes on files
 gulp.task('watch', function() {
+  // Scripts
   gulp.watch(paths.scripts.all, gulp.series('js')).on('change', browserSync.reload);
+  // Styles
   gulp.watch(paths.styles.all, gulp.series('sass')).on('change', browserSync.reload);
-  gulp.watch(paths.others.src, gulp.series('jekyll-rebuild')).on('change', browserSync.reload);
+  gulp.watch(paths.styles.others[0], gulp.series('jekyll-rebuild')).on('change', browserSync.reload);
+  gulp.watch(paths.styles.others[1], gulp.series('jekyll-rebuild')).on('change', browserSync.reload);
+  // HTML
   gulp.watch(paths.html.src, gulp.series('jekyll-rebuild'));
   gulp.watch(paths.pugFiles.src, gulp.series('pug')).on('change', browserSync.reload);
 });

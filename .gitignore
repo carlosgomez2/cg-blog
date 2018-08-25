@@ -39,3 +39,4 @@ assets/js/common.min.js
 ### Gulp ###
 old_gulpfile.js
 # package.json
+notes.md
