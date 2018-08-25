@@ -1,12 +1,19 @@
+timezone: "America/Mexico_City"
 name: Carlos Gomez
 title: Carlos Gomez
+description: A simple portfolio of a Ruby on Rails web developer, here I show my latest work and projects, I keep my notes and guides and maybe a little more.
 markdown: kramdown
-highlighter: rouge # or pygments or null
-exclude: ["node_modules",
-  "gulpfile.js",
-  "package.json",
-  "README.md",
-  "Gemfile",
-  "Gemfile.lock"]
+highlighter: rouge
+exclude: [
+    "node_modules",
+    "gulpfile.js",
+    "package.json",
+    "README.md",
+    "Gemfile",
+    "Gemfile.lock",
+    "notes.md",
+    "CNAME"
+  ]
 
-baseurl: /cg-blog
+url: "https://carlosgomez2.github.io/cg-blog"
+baseurl: "/cg-blog"
