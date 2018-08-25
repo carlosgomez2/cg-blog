@@ -7,7 +7,8 @@ styles: <link rel="stylesheet" href="/cg-blog/assets/css/main.min.css" type="tex
 ---
 
 <div class="records-container">
-  <h1>For the Record</h1>
+  <h1 class="records-title">For the Record</h1>
+  <hr />
   <ul class="records-ul">
     {% for post in site.posts %}
     <li>
@@ -16,8 +17,4 @@ styles: <link rel="stylesheet" href="/cg-blog/assets/css/main.min.css" type="tex
     </li>
     {% endfor %}
   </ul>
-
-  <!-- <div>
-    <a href="/cg-blog/" class="link-back">Go Back</a>
-  </div> -->
 </div>
