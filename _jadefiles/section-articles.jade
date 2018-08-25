@@ -4,12 +4,12 @@ section#articles.articles
       .col-1
         .desc-wrap
           p.home-lead.outdented ...Trying to not forget how things work...
-          a(href="/records").home-cta FOR THE RECORD
+          a(href="{{ site.baseurl }}/records").home-cta FOR THE RECORD
 
     .col-50
       .article-wrap
         | {% for post in site.posts limit: 12 %}
-        a(href="{{post.url}}" style="background-image: url({{post.cover}})").article-thumb
+        a(href="{{ site.baseurl }}{{post.url}}" style="background-image: url({{ site.baseurl }}{{post.cover}})").article-thumb
           .article-meta
             .name {{post.title}}
             .date {{post.date | date: "%b %d, %Y"}}

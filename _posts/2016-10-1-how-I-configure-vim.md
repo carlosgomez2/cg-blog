@@ -3,7 +3,7 @@ layout: post
 type: post
 title: How I configure Vim
 cover: /assets/post-assets/006-vim/img/vim.png
-styles: <link rel="stylesheet" href="/assets/post-assets/006-vim/css/main.css" type="text/css" media="screen" /> <link rel="stylesheet" href="/assets/post-assets/006-vim/css/github.css" type="text/css" media="screen" />
+styles: <link rel="stylesheet" href="/cg-blog/assets/post-assets/006-vim/css/main.css" type="text/css" media="screen" /> <link rel="stylesheet" href="/cg-blog/assets/post-assets/006-vim/css/github.css" type="text/css" media="screen" />
 date: 2016-10-01 00:00:00 +0000
 ---
 {::options parse_block_html="true" /}
@@ -126,9 +126,9 @@ To install from command line: `vim +PluginInstall +qall`
 
 That is it, Vim now has superpowers!
 
-![vim](/assets/post-assets/006-vim/img/vim_shot_1.png){:class="img-responsive"}
+![vim](/cg-blog/assets/post-assets/006-vim/img/vim_shot_1.png){:class="img-responsive"}
 
-![vim fuzzy finder](/assets/post-assets/006-vim/img/vim_shot_2.png){:class="img-responsive"}
+![vim fuzzy finder](/cg-blog/assets/post-assets/006-vim/img/vim_shot_2.png){:class="img-responsive"}
 
 ***
 

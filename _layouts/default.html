@@ -26,12 +26,12 @@
     <meta name="theme-color" content="#ffffff">
     <!-- End Fav -->
     <!-- Styles -->
-    {% if page.type =="post" %}
-      {{ page.styles }}
+    {% if page.type == "post" %}
+      {{page.styles}}
     {% elsif page.type == "record" %}
-      {{ page.styles }}
+      {{page.styles}}
     {% else %}
-      <link rel="stylesheet" href="assets/css/main.min.css">
+      <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.min.css">
     {% endif %}
     <!-- End Styles -->
   </head>
@@ -41,8 +41,8 @@
   {% if page.url == "/" %}
     <!-- Custom JS -->
     <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="assets/js/common.js"></script>
-    <script src="assets/js/sweetalert.min.js"></script>
+    <script src="{{ site.baseurl }}/assets/js/common.js"></script>
+    <script src="{{ site.baseurl }}/assets/js/sweetalert.min.js"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-124592042-1"></script>

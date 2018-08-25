@@ -43,7 +43,7 @@ var paths = {
 // Build Jekyll
 gulp.task('jekyll-build', function (done) {
   browserSync.notify('<span style="color: grey">Running:</span> $ jekyll build');
-  cp.spawn("bundle", ["exec", "jekyll", "build", "--incremental", "--watch"], { stdio: "inherit" });
+  cp.spawn("bundle", ["exec", "jekyll", "build"], { stdio: "inherit" })
   cp.spawn("bundle", ["exec", "jekyll", "serve", "--watch"], { stdio: "inherit" });
   done();
 });
@@ -60,7 +60,8 @@ gulp.task('jekyll-rebuild',
 gulp.task('serve', function(done) {
   browserSync.init({
     server: {
-      baseDir: '_site'
+      baseDir: '_site',
+      proxy: 'http://127.0.0.1:4000/cg-blog/'
     }
   });
   done();
