@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css?family=Cantarell:400,700|Fira+Mono:500')
+
+$font-base: 'Cantarell', sans-serif
+$base-mono: 'Fira Mono', monospace
+
+$base-line-height: 1.5
+$text-color:       #fdfdfd
+$background-color: #222d32
+$link-color:       #16a085
+$hover-color:      #1cdc9a
+$base-font-size:   16px
+$small-font-size:  $base-font-size * 0.875
+
+// Width of the content area
+$content-width:    800px
+
+// Selection colors (easy to forget)
+
+::selection
+  background: $link-color
+
+::-moz-selection
+  background: $link-color
+
+img::selection
+  background: transparent
+
+img::-moz-selection
+  background: transparent
+
+// styles
+body
+  background-color: $background-color
+  color: $text-color
+  line-height: $base-line-height
+  -webkit-tap-highlight-color: $link-color
+  font-size: $base-font-size
+
+h1, h2, h3, h4, h5, h6
+  font-family: $font-base
+  font-weight: 700
+
+p, a, li
+  font-family: $font-base
+  font-weight: 500
+
+a
+  color: $link-color
+  text-decoration: none
+  &:hover
+    color: $hover-color
+
+.container
+  width: $content-width
+  margin: 0 auto
+
+.date
+  color: $link-color
+  font-size: $small-font-size
+  font-weight: 700
+
+.img-logo
+  height: 15rem
+  margin: 0 auto
+  display: block
+
+code
+  padding: 1rem
+  display: block
+  font-family: $base-mono
+
+code, samp
+  overflow: scroll
