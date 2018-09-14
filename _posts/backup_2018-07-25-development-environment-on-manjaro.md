@@ -15,7 +15,7 @@ date: 2018-07-25 05:35:00 +0000
 {:.date}
 {{ page.date | date: "%B %e, %Y" }}
 
-Manjaro is my distribution that I chose for development environment, works quite well in my old Asus ROG G75VW, before Manjaro used Ubuntu 16.04 that I loved but their packages were somewhat old and I wanted to try Plasma 5 but not with distributions that came from Debian.
+Manjaro is my distribution that I choose for development environment, works quite well in my old Asus ROG G75VW, before Manjaro used Ubuntu 16.04 that I loved but their packages were somewhat old and I wanted to try Plasma 5 but not with distributions that came from Debian.
 
 The option was clear and easy, Arch was what most suited for me. Previously I had tried Arch but I did not like that I had to spend days configuring my laptop to had everything I need to work. I had never tried Manjaro, I knew it was derivative from Arch but I was not sure that he would work well on my computer.
 
@@ -90,7 +90,7 @@ gem install bundler
 rbenv rehash
 ```
 
-### Problems
+### Problems with Ruby installation
 
 **BUILD FAILED (ManjaroLinux 17.1.11 using ruby-build 20180618-9-g00490d3)**
 
@@ -181,9 +181,9 @@ sudo systemctl status postgresql.service
 ```sql
 psql -U postgres
 CREATE USER rasalghul PASSWORD 'toor';
-# if user exist
+-- if user exist
 DROP USER rasalghul;
-# Grant privileges
+-- Grant privileges
 ALTER ROLE rasalghul WITH SUPERUSER;
 ```
 

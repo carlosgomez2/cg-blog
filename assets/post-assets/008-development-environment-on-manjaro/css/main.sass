@@ -8,7 +8,7 @@ $text-color:       #fdfdfd
 $background-color: #222d32
 $link-color:       #16a085
 $hover-color:      #1cdc9a
-$base-font-size:   16px
+$base-font-size:   21px
 $small-font-size:  $base-font-size * 0.875
 
 // Width of the content area
@@ -40,6 +40,10 @@ h1, h2, h3, h4, h5, h6
   font-family: $font-base
   font-weight: 700
 
+hr
+  color: #2f3f46 !important
+  width: 100%
+
 p, a, li
   font-family: $font-base
   font-weight: 500
@@ -51,8 +55,13 @@ a
     color: $hover-color
 
 .container
-  width: $content-width
+  max-width: $content-width
   margin: 0 auto
+  padding: 0 1rem
+
+  display: flex
+  flex-direction: column
+  flex-wrap: wrap
 
 .date
   color: $link-color
@@ -65,9 +74,14 @@ a
   display: block
 
 code
-  padding: 1rem
+  padding-top: 1rem
   display: block
   font-family: $base-mono
+  background-color: #122b3b
+  border-radius: 3px
 
 code, samp
   overflow: scroll
+
+pre
+  margin: 0

@@ -23,9 +23,14 @@ body {
   -webkit-tap-highlight-color: #16a085;
   font-size: 16px; }
 
+
 h1, h2, h3, h4, h5, h6 {
   font-family: "Cantarell", sans-serif;
   font-weight: 700; }
+
+hr {
+  color: #2f3f46 !important;
+  width: 100%; }
 
 p, a, li {
   font-family: "Cantarell", sans-serif;
@@ -38,12 +43,22 @@ a {
     color: #1cdc9a; }
 
 .container {
-  width: 800px;
-  margin: 0 auto; }
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap; }
 
 .date {
   color: #16a085;
-  font-size: 14px;
+  font-size: 18.375px;
   font-weight: 700; }
 
 .img-logo {
@@ -52,9 +67,14 @@ a {
   display: block; }
 
 code {
-  padding: 1rem;
+  padding-top: 1rem;
   display: block;
-  font-family: "Fira Mono", monospace; }
+  font-family: "Fira Mono", monospace;
+  background-color: #122b3b;
+  border-radius: 3px; }
 
 code, samp {
   overflow: scroll; }
+
+pre {
+  margin: 0; }
