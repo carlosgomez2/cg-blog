@@ -33,32 +33,54 @@
   </head>
 <body>
   <div class="post">
-
 <div class="container">
 
-  <h1 id="manjaro-post-install-guide">Manjaro Post Install Guide</h1>
+  <h1>
+    Manjaro Post Install Guide
+  </h1>
 
-  <p class="date">July 25, 2018</p>
+  <div class="date">
+    July 25, 2018
+  </div>
 
-  <p>Manjaro is my distribution that I chose for development environment, works quite well in my old Asus ROG G75VW, before Manjaro used Ubuntu 16.04 that I loved but their packages were somewhat old and I wanted to try Plasma 5 but not with distributions that came from Debian.</p>
+  <p>
+    Manjaro is my distribution that I choose for development environment, works quite well in my old Asus ROG G75VW,
+    before Manjaro used Ubuntu 16.04 that I loved but their packages were somewhat old and I wanted to try Plasma 5 but
+    not with distributions that came from Debian.
+  </p>
 
-  <p>The option was clear and easy, Arch was what most suited for me. Previously I had tried Arch but I did not like that I had to spend days configuring my laptop to had everything I need to work. I had never tried Manjaro, I knew it was derivative from Arch but I was not sure that he would work well on my computer.</p>
+  <p>
+    The option was clear and easy, Arch was what most suited for me. Previously I had tried Arch but I did not like that
+    I had to spend days configuring my laptop to had everything I need to work. I had never tried Manjaro, I knew it was
+    derivative from Arch but I was not sure that he would work well on my computer.
+  </p>
 
-  <p>I tested and I love it!</p>
+  <p>
+    I tested Manjaro with Plasma 5 and I love it! run pretty fast and smooth, work out of the box, easy Nvidia drivers installation and so on.
+  </p>
 
-  <p>By default Manjaro has many many packages that I used to install on Ubuntu after install, no more with Manjaro this saves me lot of time.</p>
+  <p>
+    By default Manjaro has many many packages that I used to install on Ubuntu after install, no more with Manjaro this
+    saves me lot of time.
+  </p>
 
-  <p>So, no more talk. This is my configuration for set a basic Ruby on Rails development environment.</p>
+  <p>
+    So, no more talk. This is my configuration for set a basic Ruby on Rails development environment.
+  </p>
 
-  <p><img src="/cg-blog/assets/post-assets/008-development-environment-on-manjaro/img/manjaro-logo.png" alt="Manjaro" class="img-logo" /></p>
+  <img src="/cg-blog/assets/post-assets/008-development-environment-on-manjaro/img/manjaro-logo.png" alt="Manjaro" class="img-logo">
 
-  <h2 id="development">Development</h2>
+  <h2>
+    Development
+  </h2>
 
-  <p>List of tools that I used to install:</p>
+  <p>
+    List of tools that I used to install:
+  </p>
 
   <ul>
     <li>OhMyZsh</li>
-    <li>RoR</li>
+    <li>Ruby on Rails</li>
     <li>Rbenv</li>
     <li>MariaDB</li>
     <li>Powerline Fonts</li>
@@ -68,13 +90,16 @@
     <li>PostgreSQL</li>
   </ul>
 
-  <h3 id="ohmyzsh">OhMyZsh</h3>
+  <h3>
+    OhMyZsh
+  </h3>
 
   <ul>
     <li>Install script:</li>
   </ul>
 
-  <p><code class="highlighter-rouge">sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"</code></p>
+  <figure class="highlight"><pre><code class="language-bash" data-lang="bash">  sh <span class="nt">-c</span> <span class="s2">"</span><span class="k">$(</span>curl <span class="nt">-fsSL</span> https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh<span class="k">)</span><span class="s2">"</span>
+  </code></pre></figure>
 
   <ul>
     <li>Copy .zsh folder into home folder</li>
@@ -82,139 +107,174 @@
     <li>Copy ~/.bashrc into home folder</li>
   </ul>
 
-  <h3 id="install-fonts">Install Fonts</h3>
+  <h3>
+    Install Fonts
+  </h3>
 
-  <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> /tmp
-git clone https://github.com/powerline/fonts.git <span class="nt">--depth</span><span class="o">=</span>1
-<span class="nb">cd </span>fonts
-<span class="c"># Install fonts</span>
-./install.sh
-<span class="c"># clean</span>
-<span class="nb">cd</span> ..
-rm <span class="nt">-rf</span> fonts
-<span class="nb">cd</span> ~
-<span class="c"># Reload font cache</span>
-fc-cache <span class="nt">-vf</span>
-<span class="c"># Space Mono for Powerline Regular 14 is my terminal font</span>
-</code></pre></div>  </div>
+  <figure class="highlight"><pre><code class="language-bash" data-lang="bash">  <span class="nb">cd</span> /tmp
+  git clone https://github.com/powerline/fonts.git <span class="nt">--depth</span><span class="o">=</span>1
+  <span class="nb">cd </span>fonts
+  <span class="c"># Install fonts</span>
+  ./install.sh
+  <span class="c"># clean</span>
+  <span class="nb">cd</span> ..
+  rm <span class="nt">-rf</span> fonts
+  <span class="nb">cd</span> ~
+  <span class="c"># Reload font cache</span>
+  fc-cache <span class="nt">-vf</span>
+  <span class="c"># Space Mono for Powerline Regular 14 is my terminal font</span>
+  </code></pre></figure>
 
-  <h3 id="install-mariadb">Install MariaDb</h3>
+  <h3>
+    Install MariaDb
+  </h3>
 
   <p>Instructions on <a href="https://gitlab.com/snippets/1737399.js">Gitlab Snippet</a></p>
 
-  <h3 id="install-rbenv">Install rbenv</h3>
+  <h3>
+    Install rbenv
+  </h3>
 
-  <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd
-</span>git clone https://github.com/rbenv/rbenv.git ~/.rbenv
-git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
-<span class="c"># Export path environment variable to .zshrc &amp; .bashrc</span>
-rbenv install 2.3.7
-rbenv global 2.3.7
-<span class="nb">exec</span> <span class="nv">$SHELL</span>
-<span class="c"># Or reopen terminal</span>
-ruby <span class="nt">-v</span>
-<span class="c"># Install bundle</span>
-gem install bundler
-<span class="c"># Rehash</span>
-rbenv rehash
-</code></pre></div>  </div>
+  <figure class="highlight"><pre><code class="language-bash" data-lang="bash">  <span class="nb">cd
+  </span>git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+  git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
+  <span class="c"># Export path environment variable to .zshrc &amp; .bashrc</span>
+  rbenv install 2.3.7
+  rbenv global 2.3.7
+  <span class="nb">exec</span> <span class="nv">$SHELL</span>
+  <span class="c"># Or reopen terminal</span>
+  ruby <span class="nt">-v</span>
+  <span class="c"># Install bundle</span>
+  gem install bundler
+  <span class="c"># Rehash</span>
+  rbenv rehash
+  </code></pre></figure>
 
-  <h3 id="problems-with-ruby-installation">Problems with Ruby installation</h3>
+  <h3>
+    Problems with Ruby installation
+  </h3>
 
   <p><strong>BUILD FAILED (ManjaroLinux 17.1.11 using ruby-build 20180618-9-g00490d3)</strong></p>
 
-  <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>pacman <span class="nt">-S</span>  base-devel libffi libyaml openssl zlib openssl-1.0
-which gcc
-<span class="c"># /usr/bin/gcc</span>
-<span class="nv">PKG_CONFIG_PATH</span><span class="o">=</span>/usr/lib/openssl-1.0/pkgconfig <span class="nv">CC</span><span class="o">=</span>/usr/bin/gcc rbenv install 2.3.7
-</code></pre></div>  </div>
+  <figure class="highlight"><pre><code class="language-bash" data-lang="bash">  <span class="nb">sudo </span>pacman <span class="nt">-S</span> base-devel libffi libyaml openssl zlib openssl-1.0
+  which gcc
+  <span class="c"># /usr/bin/gcc</span>
+  <span class="nv">PKG_CONFIG_PATH</span><span class="o">=</span>/usr/lib/openssl-1.0/pkgconfig <span class="nv">CC</span><span class="o">=</span>/usr/bin/gcc rbenv install 2.3.7
+  </code></pre></figure>
 
-  <p>If /tmp no space left?</p>
+  <p>
+    If /tmp no space left?
+  </p>
 
-  <p><code class="highlighter-rouge">sudo rm -rf /tmp/*</code></p>
+  <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">sudo </span>rm <span class="nt">-rf</span> /tmp/<span class="k">*</span></code></pre></figure>
 
-  <p>If still fails</p>
+  <p>
+    If still fails
+  </p>
 
-  <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>pacman <span class="nt">-Ss</span> gcc5
-<span class="c"># community/gcc54 5.4.1-1</span>
-<span class="c"># Install current gcc5 version</span>
-<span class="nb">sudo </span>pacman <span class="nt">-S</span> gcc54
-<span class="c"># try again wich gcc path in PKG_CONFIG_PATH</span>
-</code></pre></div>  </div>
+  <figure class="highlight"><pre><code class="language-bash" data-lang="bash">  <span class="nb">sudo </span>pacman <span class="nt">-Ss</span> gcc5
+  <span class="c"># community/gcc54 5.4.1-1</span>
+  <span class="c"># Install current gcc5 version</span>
+  <span class="nb">sudo </span>pacman <span class="nt">-S</span> gcc54
+  <span class="c"># try again wich gcc path in PKG_CONFIG_PATH</span>
+  </code></pre></figure>
 
-  <p>Sources: <a href="https://github.com/rbenv/ruby-build/issues/1118">Manjaro</a>, <a href="https://github.com/rbenv/ruby-build/issues/930">Arch</a></p>
+  <p>Sources: <a href="https://github.com/rbenv/ruby-build/issues/1118">Manjaro</a>, <a href="https://github.com/rbenv/ruby-build/issues/930">Arch</a>.</p>
 
-  <h3 id="configure-git">Configure Git</h3>
+  <h3>
+    Configure Git
+  </h3>
 
-  <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git config <span class="nt">--global</span> color.ui <span class="nb">true
-</span>git config <span class="nt">--global</span> user.name <span class="s2">"Carlos Gomez"</span>
-git config <span class="nt">--global</span> user.email <span class="s2">"carlosgomez.deb@gmail.com"</span>
-<span class="c"># copy your .ssh folder or create a new key and add to github and gitlab</span>
-ssh-keygen <span class="nt">-t</span> rsa <span class="nt">-b</span> 4096 <span class="nt">-C</span> <span class="s2">"carlosgomez.deb@gmail.com"</span>
-<span class="nb">cat</span> ~/.ssh/id_rsa.pub
-<span class="c"># Github</span>
-ssh <span class="nt">-T</span> git@github.com
-<span class="c"># Gitlab</span>
-ssh <span class="nt">-T</span> git@gitlab.com
-</code></pre></div>  </div>
+  <figure class="highlight"><pre><code class="language-bash" data-lang="bash">  git config <span class="nt">--global</span> color.ui <span class="nb">true
+  </span>git config <span class="nt">--global</span> user.name <span class="s2">"Carlos Gomez"</span>
+  git config <span class="nt">--global</span> user.email <span class="s2">"carlosgomez.deb@gmail.com"</span>
+  <span class="c"># copy your .ssh folder or create a new key and add to github and gitlab</span>
+  ssh-keygen <span class="nt">-t</span> rsa <span class="nt">-b</span> 4096 <span class="nt">-C</span> <span class="s2">"carlosgomez.deb@gmail.com"</span>
+  <span class="nb">cat</span> ~/.ssh/id_rsa.pub
+  <span class="c"># Github</span>
+  ssh <span class="nt">-T</span> git@github.com
+  <span class="c"># Gitlab</span>
+  ssh <span class="nt">-T</span> git@gitlab.com
+  </code></pre></figure>
 
-  <h3 id="rails-507-retrocompatible-with-5001">Rails 5.0.7 retrocompatible with 5.0.0.1</h3>
+  <h3>
+    Rails 5.0.7 retrocompatible with 5.0.0.1
+  </h3>
 
-  <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Install Rails</span>
-gem install rails <span class="nt">-v</span> 5.0.7
-rbenv rehash
-<span class="c"># Check version</span>
-rails <span class="nt">-v</span>
-<span class="c"># Rails 5.0.7</span>
-</code></pre></div>  </div>
+  <figure class="highlight"><pre><code class="language-bash" data-lang="bash">  <span class="c"># Install Rails</span>
+  gem install rails <span class="nt">-v</span> 5.0.7
+  rbenv rehash
+  <span class="c"># Check version</span>
+  rails <span class="nt">-v</span>
+  <span class="c"># Rails 5.0.7</span>
+  </code></pre></figure>
 
-  <h3 id="gems">Gems</h3>
+  <h3>
+    Gems
+  </h3>
 
-  <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem install foreman rubocop jekyll github-pages
-<span class="c"># optional if I am working with ecommerce</span>
-gem install spree
-</code></pre></div>  </div>
+  <figure class="highlight"><pre><code class="language-bash" data-lang="bash">  gem install foreman rubocop jekyll github-pages
+  <span class="c"># optional if I am working with ecommerce</span>
+  gem install spree
+  </code></pre></figure>
 
-  <h3 id="meteorjs">MeteorJS</h3>
+  <h3>
+    MeteorJS
+  </h3>
 
-  <p><code class="highlighter-rouge">curl https://install.meteor.com/ | sh</code></p>
+  <figure class="highlight"><pre><code class="language-bash" data-lang="bash">curl https://install.meteor.com/ | sh</code></pre></figure>
 
-  <h3 id="redis">Redis</h3>
+  <h3>
+    Redis
+  </h3>
 
-  <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>pacman <span class="nt">-S</span> redis
-<span class="nb">sudo </span>systemctl <span class="nb">enable</span> <span class="nt">--now</span> redis.service
-<span class="c"># Check if Redis is up</span>
-<span class="nb">sudo </span>systemctl status redis.service
-</code></pre></div>  </div>
+  <figure class="highlight"><pre><code class="language-bash" data-lang="bash">  <span class="nb">sudo </span>pacman <span class="nt">-S</span> redis
+  <span class="nb">sudo </span>systemctl <span class="nb">enable</span> <span class="nt">--now</span> redis.service
+  <span class="c"># Check if Redis is up</span>
+  <span class="nb">sudo </span>systemctl status redis.service
+  </code></pre></figure>
 
-  <h3 id="postgresql">PostgreSQL</h3>
+  <h3>
+    PostgreSQL
+  </h3>
 
-  <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>pacman <span class="nt">-S</span> postgresql
-<span class="nb">sudo </span>su postgres <span class="nt">-l</span> <span class="c"># or sudo -u postgres -i</span>
-initdb <span class="nt">--locale</span> <span class="nv">$LANG</span> <span class="nt">-E</span> UTF8 <span class="nt">-D</span> <span class="s1">'/var/lib/postgres/data/'</span>
-<span class="nb">exit
-sudo </span>systemctl <span class="nb">enable</span> <span class="nt">--now</span> postgresql.service
-<span class="c"># Check if PostgreSQL is up</span>
-<span class="nb">sudo </span>systemctl status postgresql.service
-</code></pre></div>  </div>
+  <figure class="highlight"><pre><code class="language-bash" data-lang="bash">  <span class="nb">sudo </span>pacman <span class="nt">-S</span> postgresql
+  <span class="nb">sudo </span>su postgres <span class="nt">-l</span> <span class="c"># or sudo -u postgres -i</span>
+  initdb <span class="nt">--locale</span> <span class="nv">$LANG</span> <span class="nt">-E</span> UTF8 <span class="nt">-D</span> <span class="s1">'/var/lib/postgres/data/'</span>
+  <span class="nb">exit
+  sudo </span>systemctl <span class="nb">enable</span> <span class="nt">--now</span> postgresql.service
+  <span class="c"># Check if PostgreSQL is up</span>
+  <span class="nb">sudo </span>systemctl status postgresql.service
+  </code></pre></figure>
 
-  <h4 id="setting-up-postgres-user">Setting up Postgres User</h4>
+  <h4>
+    Setting up Postgres User
+  </h4>
 
-  <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">psql</span> <span class="o">-</span><span class="n">U</span> <span class="n">postgres</span>
-<span class="k">CREATE</span> <span class="k">USER</span> <span class="n">rasalghul</span> <span class="n">PASSWORD</span> <span class="s1">'toor'</span><span class="p">;</span>
-<span class="c1">-- if user exist</span>
-<span class="k">DROP</span> <span class="k">USER</span> <span class="n">rasalghul</span><span class="p">;</span>
-<span class="c1">-- Grant privileges</span>
-<span class="k">ALTER</span> <span class="k">ROLE</span> <span class="n">rasalghul</span> <span class="k">WITH</span> <span class="n">SUPERUSER</span><span class="p">;</span>
-</code></pre></div>  </div>
+  <figure class="highlight"><pre><code class="language-sql" data-lang="sql">  <span class="n">psql</span> <span class="o">-</span><span class="n">U</span> <span class="n">postgres</span>
+  <span class="k">CREATE</span> <span class="k">USER</span> <span class="n">rasalghul</span> <span class="n">PASSWORD</span> <span class="s1">'toor'</span><span class="p">;</span>
+  <span class="c1">-- if user exist</span>
+  <span class="k">DROP</span> <span class="k">USER</span> <span class="n">rasalghul</span><span class="p">;</span>
+  <span class="c1">-- Grant privileges</span>
+  <span class="k">ALTER</span> <span class="k">ROLE</span> <span class="n">rasalghul</span> <span class="k">WITH</span> <span class="n">SUPERUSER</span><span class="p">;</span>
+  </code></pre></figure>
 
   <p>Source <a href="https://www.nanotutoriales.com/como-crear-un-usuario-y-asignarle-permisos-en-postgresql">Configure PostgreSQL</a></p>
 
-  <hr />
+  <h3>Conclusion</h3>
 
-  <h4 class="date" id="carlos-gomez-2018">Carlos Gomez 2018</h4>
+  <p>
+    So, with this few steps I have fully functional Distro for web development, in future post I have planned to include
+    some tools that I most use, such code editors, desktop environment tunning for productivity, konsole configurations and
+    addons, etc. keep tuned...
+  </p>
+
+  <hr>
+
+  <div class="date">
+    <h5>Carlos Gomez 2018</h5>
+  </div>
 </div>
-
 </div>
 
 </body>
