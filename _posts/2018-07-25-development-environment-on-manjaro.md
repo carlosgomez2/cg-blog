@@ -90,7 +90,7 @@ gem install bundler
 rbenv rehash
 ```
 
-### Problems
+### Problems with Ruby installation
 
 **BUILD FAILED (ManjaroLinux 17.1.11 using ruby-build 20180618-9-g00490d3)**
 
@@ -181,9 +181,9 @@ sudo systemctl status postgresql.service
 ```sql
 psql -U postgres
 CREATE USER rasalghul PASSWORD 'toor';
-# if user exist
+-- if user exist
 DROP USER rasalghul;
-# Grant privileges
+-- Grant privileges
 ALTER ROLE rasalghul WITH SUPERUSER;
 ```
 

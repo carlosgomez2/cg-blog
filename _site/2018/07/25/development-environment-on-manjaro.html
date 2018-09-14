@@ -119,7 +119,7 @@ gem install bundler
 rbenv rehash
 </code></pre></div>  </div>
 
-  <h3 id="problems">Problems</h3>
+  <h3 id="problems-with-ruby-installation">Problems with Ruby installation</h3>
 
   <p><strong>BUILD FAILED (ManjaroLinux 17.1.11 using ruby-build 20180618-9-g00490d3)</strong></p>
 
@@ -202,9 +202,9 @@ sudo </span>systemctl <span class="nb">enable</span> <span class="nt">--now</spa
 
   <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">psql</span> <span class="o">-</span><span class="n">U</span> <span class="n">postgres</span>
 <span class="k">CREATE</span> <span class="k">USER</span> <span class="n">rasalghul</span> <span class="n">PASSWORD</span> <span class="s1">'toor'</span><span class="p">;</span>
-<span class="o">#</span> <span class="n">if</span> <span class="k">user</span> <span class="n">exist</span>
+<span class="c1">-- if user exist</span>
 <span class="k">DROP</span> <span class="k">USER</span> <span class="n">rasalghul</span><span class="p">;</span>
-<span class="o">#</span> <span class="k">Grant</span> <span class="k">privileges</span>
+<span class="c1">-- Grant privileges</span>
 <span class="k">ALTER</span> <span class="k">ROLE</span> <span class="n">rasalghul</span> <span class="k">WITH</span> <span class="n">SUPERUSER</span><span class="p">;</span>
 </code></pre></div>  </div>
 
