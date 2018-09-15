@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css?family=Space+Mono:400,700')
+
+$font-base: 'Space Mono', monospace
+$base-mono: $font-base, monospace
+
+$base-line-height: 1.5
+$text-color:       black
+$background-color: #fdfdfd
+$link-color:       #6762A6
+$hover-color:      #C9C3E6
+$base-font-size:   20px
+$small-font-size:  $base-font-size * 0.875
+
+// Width of the content area
+$content-width:    800px
+
+// Selection colors (easy to forget)
+
+::selection
+  background: $link-color
+  color: $background-color
+
+::-moz-selection
+  background: $link-color
+  color: $background-color
+
+img::selection
+  background: transparent
+
+img::-moz-selection
+  background: transparent
+
+// styles
+body
+  background-color: $background-color
+  color: $text-color
+  line-height: $base-line-height
+  -webkit-tap-highlight-color: $link-color
+  font-size: $base-font-size
+
+h1, h2, h3, h4, h5, h6
+  font-family: $font-base
+  font-weight: 700
+
+hr
+  color: black !important
+  width: 100%
+
+p, a, li
+  font-family: $font-base
+  font-weight: 500
+
+a
+  color: $link-color
+  text-decoration: none
+  &:hover
+    color: $hover-color
+  
+.container
+  max-width: $content-width
+  margin: 0 auto
+  padding: 0 1rem
+
+  display: flex
+  flex-direction: column
+  flex-wrap: wrap
+
+.img-logo
+  width: 200px
+
+.img-responsive
+  width: 100%
+  object-fit: contain
+  @media (max-width: 830px)
+    margin: 0 auto
+
+.date
+  color: $link-color
+  font-size: $small-font-size
+  font-weight: 700
