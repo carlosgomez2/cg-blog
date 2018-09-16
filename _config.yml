@@ -1,6 +1,6 @@
 timezone: "America/Mexico_City"
 name: Carlos Gomez
-title: Carlos Gomez
+title: Carlos Gomez a Ruby on Rails Developer
 description: A simple portfolio of a Ruby on Rails web developer, here I show my latest work and projects, I keep my notes and guides and maybe a little more.
 markdown: kramdown
 highlighter: rouge
