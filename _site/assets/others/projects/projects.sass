@@ -1,0 +1,135 @@
+// Color Variables
+// Cold
+$Navy:		#001f3f
+$Blue:		#0074D9
+$Aqua:		#7FDBFF
+$Teal:		#39CCCC
+$Olive:		#3D9970
+$Green:	#2ECC40
+$Lime:		#01FF70
+// Warm
+$Yellow:	#FFDC00
+$Orange:	#FF851B
+$Red:		#FF4136
+$Red-text:	#7F0600
+$Maroon:	#85144b
+$Fuchsia:	#F012BE
+$Purple:	#B10DC9
+// Greyscale
+$Black:		#111111
+$Darkgray:	#444444
+$Gray:		#888888
+$Ligthgray:	#AAAAAA
+$Silver:		#DDDDDD
+$White:		#FFFFFF
+
+// Fonts
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:800,600,400)
+$Os: 'Open Sans', sans-serif
+
+
+*
+	box-sizing: border-box
+	margin: 0
+	padding: 0
+
+body
+	background: $Red
+
+h1, h3
+	text-align: center
+	font-family: $Os
+
+h1
+	margin-top: 1em
+	margin-bottom: 1em
+	color: $Red-text
+
+h3
+	color: $White
+
+main
+	img
+		display: block
+		width: 100%
+		height: 100%
+		
+
+		// blur effect
+		-webkit-filter: blur(11px)
+		-webkit-webkit-transition: all 2.5s ease
+		-moz-webkit-transition: all 2.5s ease
+		-o-webkit-transition: all 2.5s ease
+		-ms-webkit-transition: all 2.5s ease
+		webkit-transition: all 2.5s ease
+
+		&:hover
+			-webkit-filter: none
+
+.container-projects
+	background: $Red-text
+	border-radius: 2px
+
+.small, .normal, .large
+	padding: 5px
+	height: auto
+
+.column-1-3, .column-2-3
+	margin: auto
+
+.foot
+	padding-top: 1.8em
+	padding-bottom: 1.8em
+	font-weight: 600
+
+@media screen and (min-width: 480px)
+	h1
+		margin-top: 1.2em
+		margin-bottom: 1.2em
+
+	.container-projects
+		width: 96%
+		margin: auto
+
+	.row
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+	
+	.column-1-3
+		width: 33.33%
+
+	.column-2-3
+		width: 66.67%
+
+	// .small, .normal, .large
+	// 	height: auto
+
+	.column-50
+		width: 50%
+
+@media screen and (min-width: 800px)
+	h1
+		margin-top: 1.5em
+		margin-bottom: 1.5em
+
+	.container-projects
+		width: 90%
+
+	// .small
+	// 	height: auto
+
+	// .normal, .large
+	// 	height: auto
+
+@media screen and (min-width: 1024px)
+	.container-projects
+		width: 922px
+
+	// .small
+	// 	height: 200px
+
+	// .normal, .large
+	// 	height: 100%
