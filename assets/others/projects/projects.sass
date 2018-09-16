@@ -22,11 +22,7 @@ $Gray:		#888888
 $Ligthgray:	#AAAAAA
 $Silver:		#DDDDDD
 $White:		#FFFFFF
-
-// Fonts
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:800,600,400)
-$Os: 'Open Sans', sans-serif
-
+$primary-color:	#141b1d
 
 *
 	box-sizing: border-box
@@ -34,16 +30,14 @@ $Os: 'Open Sans', sans-serif
 	padding: 0
 
 body
-	background: $Red
+	background: $primary-color
 
 h1, h3
 	text-align: center
-	font-family: $Os
 
 h1
 	margin-top: 1em
 	margin-bottom: 1em
-	color: $Red-text
 
 h3
 	color: $White
@@ -53,6 +47,7 @@ main
 		display: block
 		width: 100%
 		height: 100%
+		border-radius: 4px
 		
 
 		// blur effect
@@ -67,8 +62,8 @@ main
 			-webkit-filter: none
 
 .container-projects
-	background: $Red-text
-	border-radius: 2px
+	background: lighten($primary-color, 3.5)
+	border-radius: 4px
 
 .small, .normal, .large
 	padding: 5px
@@ -80,7 +75,9 @@ main
 .foot
 	padding-top: 1.8em
 	padding-bottom: 1.8em
-	font-weight: 600
+	// font-weight: 600
+	text-align: center
+	color: white
 
 @media screen and (min-width: 480px)
 	h1
