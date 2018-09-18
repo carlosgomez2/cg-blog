@@ -1,6 +1,7 @@
 $(function() {
 	smoothScroll(700);
-  mobileNav();
+	mobileNav();
+	projects();
 });
 
 function mobileNav() {
@@ -31,4 +32,15 @@ function smoothScroll (duration) {
 				return false;
 	    }
 	});
+}
+
+function projects() {
+	$('.container-project').hover(
+		function () {
+			$(this).find('.image-text').hide(100);
+		},
+		function () {
+			$(this).find('.image-text').show("slow");
+		}
+	);
 }

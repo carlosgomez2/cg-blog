@@ -35,6 +35,24 @@ main img {
   background: #1b2528;
   border-radius: 4px; }
 
+.container-project {
+  position: relative; }
+
+.image-text {
+  position: absolute;
+  z-index: 9999;
+  bottom: 1rem;
+  left: 1rem;
+  width: 94%;
+  background-color: rgba(20, 27, 29, 0.65);
+  padding: 0.5rem;
+  border-radius: 4px;
+  color: white;
+  text-align: center; }
+
+.accent {
+  color: #00fc8c; }
+
 .small, .normal, .large {
   padding: 5px;
   height: auto; }
@@ -76,7 +94,3 @@ main img {
     margin-bottom: 1.5em; }
   .container-projects {
     width: 90%; } }
-
-@media screen and (min-width: 1024px) {
-  .container-projects {
-    width: 922px; } }
