@@ -1,9 +1,9 @@
 ---
 layout: post
 type: post
-title: Development Environment on Manjaro
-cover: /assets/post-assets/008-development-environment-on-manjaro/img/thumb.jpg
-styles: <link rel="stylesheet" href="/cg-blog/assets/post-assets/008-development-environment-on-manjaro/css/main.css" type="text/css" media="screen" /> <link rel="stylesheet" href="/cg-blog/assets/post-assets/008-development-environment-on-manjaro/css/thankful_eyes.css" type="text/css" media="screen" />
+title: Install Docker and build a simple node app from dockerfile on Manjaro
+cover: /assets/post-assets/004-install-docker-and-build-a-simple-node-app-from-dockerfile-on-manjaro/img/thumb.jpg
+styles: <link rel="stylesheet" href="/cg-blog/assets/post-assets/004-install-docker-and-build-a-simple-node-app-from-dockerfile-on-manjaro/css/main.css" type="text/css" media="screen" /> <link rel="stylesheet" href="/cg-blog/assets/post-assets/004-install-docker-and-build-a-simple-node-app-from-dockerfile-on-manjaro/css/thankful_eyes.css" type="text/css" media="screen" />
 date: 2018-07-25 05:35:00 +0000
 ---
 {::options parse_block_html="true" /}
@@ -25,7 +25,7 @@ By default Manjaro has many many packages that I used to install on Ubuntu after
 
 So, no more talk. This is my configuration for set a basic Ruby on Rails development environment.
 
-![Manjaro](/cg-blog/assets/post-assets/008-development-environment-on-manjaro/img/manjaro-logo.png){:class="img-logo"}
+![Manjaro](/cg-blog/assets/post-assets/004-install-docker-and-build-a-simple-node-app-from-dockerfile-on-manjaro/img/manjaro-logo.png){:class="img-logo"}
 
 ## Development
 
