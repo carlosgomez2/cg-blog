@@ -1,11 +1,14 @@
 @import url("https://fonts.googleapis.com/css?family=Cantata+One|Imprima");
 ::-moz-selection {
-  background: #36a1f0; }
+  background: #36a1f0;
+  color: white; }
 ::selection {
-  background: #36a1f0; }
+  background: #36a1f0;
+  color: white; }
 
 ::-moz-selection {
-  background: #36a1f0; }
+  background: #36a1f0;
+  color: white; }
 
 img::-moz-selection {
   background: transparent; }
