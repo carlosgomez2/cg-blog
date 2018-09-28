@@ -4,190 +4,75 @@ type: post
 title: Install Docker and build a simple node app from dockerfile on Manjaro
 cover: /assets/post-assets/004-install-docker-and-build-a-simple-node-app-from-dockerfile-on-manjaro/img/thumb.jpg
 styles: <link rel="stylesheet" href="/cg-blog/assets/post-assets/004-install-docker-and-build-a-simple-node-app-from-dockerfile-on-manjaro/css/main.css" type="text/css" media="screen" /> <link rel="stylesheet" href="/cg-blog/assets/post-assets/004-install-docker-and-build-a-simple-node-app-from-dockerfile-on-manjaro/css/thankful_eyes.css" type="text/css" media="screen" />
-date: 2018-07-25 05:35:00 +0000
+date: 2018-09-27 10:23:00 +0000
 ---
 {::options parse_block_html="true" /}
 
 <div class="container">
 
-# Manjaro Post Install Guide
+# Install Docker and build a simple node app from dockerfile on Manjaro
 
 {:.date}
 {{ page.date | date: "%B %e, %Y" }}
 
-Manjaro is my distribution that I choose for development environment, works quite well in my old Asus ROG G75VW, before Manjaro used Ubuntu 16.04 that I loved but their packages were somewhat old and I wanted to try Plasma 5 but not with distributions that came from Debian.
+First you need to install latest docker on Manjaro
 
-The option was clear and easy, Arch was what most suited for me. Previously I had tried Arch but I did not like that I had to spend days configuring my laptop to had everything I need to work. I had never tried Manjaro, I knew it was derivative from Arch but I was not sure that he would work well on my computer.
+`sudo pacman -S docker docker-compose docker-machine`
 
-I tested and I love it!
+Then we need to enable on the startup docker
 
-By default Manjaro has many many packages that I used to install on Ubuntu after install, no more with Manjaro this saves me lot of time.
+1. enable on startup `$ sudo systemctl enable docker`
+2. start docker service `$ sudo systemctl start docker`
+3. check the docker service status `$ sudo systemctl status docker` (must be active)
+4. quit
 
-So, no more talk. This is my configuration for set a basic Ruby on Rails development environment.
+Once pacman has been completed the installation of Docker on our system we need to do [Post-installation steps](https://docs.docker.com/install/linux/linux-postinstall/). now you should be able to use docker with `sudo` before docker command, but I do not like that, instead I need to create a 'docker' group and add my user to this new group and reboot or logout and login to make changes take effect, so.
 
-![Manjaro](/cg-blog/assets/post-assets/004-install-docker-and-build-a-simple-node-app-from-dockerfile-on-manjaro/img/manjaro-logo.png){:class="img-logo"}
+Check versions of Docker you have:
+- `$ docker -v`
+  - Docker version 18.06.1-ce, build e68fc7a215
+- `$ docker-machine -v`
+  - docker-machine version 0.15.0, build HEAD
+- `$ docker-compose -v`
+  - docker-compose version 1.22.0, build unknown
+  
+Use Docker without sudo:
 
-## Development
+1. Create docker group `$ sudo groupadd docker`
+2. Add your user to docker group `$ sudo usermod -aG docker $USER`
+3. logout or reboot to changes take effect
 
-List of tools that I used to install:
+Now, create a [Docker Hub](https://hub.docker.com) account.
 
-- OhMyZsh
-- RoR
-- Rbenv
-- MariaDB
-- Powerline Fonts
-- Misc. Gems
-- Meteor
-- Redis
-- PostgreSQL
+In a directory that you preffered, clone git@github.com:carlosgomez2/docker-course.git and cd into docker course directory. At this point we only work for this task in folder 'dockerfile-assignment-1', so enter directory and build the docker image
 
-### OhMyZsh
+1. `$ docker build . -t node-6-app` to build image
+2. `$ docker container run -p 80:3000 --rm node-6-app`
+3. in browser go to localhost:80, you will see the app working
 
-- Install script:
+![](Screenshot_20180920_115443.png)
 
-`sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"`
+![](Screenshot_20180920_115554.png)
 
-- Copy .zsh folder into home folder
-- Copy ~/.zshrc into home folder
-- Copy ~/.bashrc into home folder
+![](Screenshot_20180920_115743.png)
 
-### Install Fonts
+![](Screenshot_20180920_115838.png)
 
-```shell
-cd /tmp
-git clone https://github.com/powerline/fonts.git --depth=1
-cd fonts
-# Install fonts
-./install.sh
-# clean
-cd ..
-rm -rf fonts
-cd ~
-# Reload font cache
-fc-cache -vf
-# Space Mono for Powerline Regular 14 is my terminal font
-```
+Then we need to push the app image container to Docker Hub, login in console, `$ docker login` add your credentials (be aware: if you are pushing from a remote or untrusted machine be sure to `docker logout` after you are done). Push your app `$ docker push carlosgg/node-6-app:latest`
 
-### Install MariaDb
+Optional:
 
-Instructions on [Gitlab Snippet](https://gitlab.com/snippets/1737399.js)
+We can remove image container locally and pull it from docker hub in this way:
 
-### Install rbenv
+1. remove local image container `docker image rm carlosgg/node-6-app`
+2. list your images to ensure to you had removed image `docker image ls`
+3. now run the image by pulling from Docker Hub `docker container run --rm -p 80:3000 carlosgg/node-6-app`
+4. you will see in the CLI 'Unable to find image ... locally' and then 'Pulling from carlosgg/node-6-app'
+5. open browser and go to localhost:80 
 
-```shell
-cd
-git clone https://github.com/rbenv/rbenv.git ~/.rbenv
-git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
-# Export path environment variable to .zshrc & .bashrc
-rbenv install 2.3.7
-rbenv global 2.3.7
-exec $SHELL
-# Or reopen terminal
-ruby -v
-# Install bundle
-gem install bundler
-# Rehash
-rbenv rehash
-```
+### Conclusion
 
-### Problems with Ruby installation
-
-**BUILD FAILED (ManjaroLinux 17.1.11 using ruby-build 20180618-9-g00490d3)**
-
-```shell
-sudo pacman -S  base-devel libffi libyaml openssl zlib openssl-1.0
-which gcc
-# /usr/bin/gcc
-PKG_CONFIG_PATH=/usr/lib/openssl-1.0/pkgconfig CC=/usr/bin/gcc rbenv install 2.3.7
-```
-
-If /tmp no space left?
-
-`sudo rm -rf /tmp/*`
-
-If still fails
-
-```shell
-sudo pacman -Ss gcc5
-# community/gcc54 5.4.1-1
-# Install current gcc5 version
-sudo pacman -S gcc54
-# try again wich gcc path in PKG_CONFIG_PATH
-```
-
-Sources: [Manjaro](https://github.com/rbenv/ruby-build/issues/1118), [Arch](https://github.com/rbenv/ruby-build/issues/930)
-
-### Configure Git
-
-```shell
-git config --global color.ui true
-git config --global user.name "Carlos Gomez"
-git config --global user.email "carlosgomez.deb@gmail.com"
-# copy your .ssh folder or create a new key and add to github and gitlab
-ssh-keygen -t rsa -b 4096 -C "carlosgomez.deb@gmail.com"
-cat ~/.ssh/id_rsa.pub
-# Github
-ssh -T git@github.com
-# Gitlab
-ssh -T git@gitlab.com
-```
-
-### Rails 5.0.7 retrocompatible with 5.0.0.1
-
-```shell
-# Install Rails
-gem install rails -v 5.0.7
-rbenv rehash
-# Check version
-rails -v
-# Rails 5.0.7
-```
-
-### Gems
-
-```shell
-gem install foreman rubocop jekyll github-pages
-# optional if I am working with ecommerce
-gem install spree
-```
-
-### MeteorJS
-
-`curl https://install.meteor.com/ | sh`
-
-### Redis
-
-```shell
-sudo pacman -S redis
-sudo systemctl enable --now redis.service
-# Check if Redis is up
-sudo systemctl status redis.service
-```
-
-### PostgreSQL
-
-```shell
-sudo pacman -S postgresql
-sudo su postgres -l # or sudo -u postgres -i
-initdb --locale $LANG -E UTF8 -D '/var/lib/postgres/data/'
-exit
-sudo systemctl enable --now postgresql.service
-# Check if PostgreSQL is up
-sudo systemctl status postgresql.service
-```
-
-#### Setting up Postgres User
-
-```sql
-psql -U postgres
-CREATE USER rasalghul PASSWORD 'toor';
--- if user exist
-DROP USER rasalghul;
--- Grant privileges
-ALTER ROLE rasalghul WITH SUPERUSER;
-```
-
-Source [Configure PostgreSQL](https://www.nanotutoriales.com/como-crear-un-usuario-y-asignarle-permisos-en-postgresql)
+Few steps to install docker and enable on Manjaro, download examples repo and use one of them to build a image container and push it to Docker Hub.
 
 ***
 

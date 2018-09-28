@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="theme-color" content="#141b1d" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title> Install Docker and build a simple node app from dockerfile on Manjaro @  CG</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Fav -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/cg-blog/assets/img/fav/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/cg-blog/assets/img/fav/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/cg-blog/assets/img/fav/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/cg-blog/assets/img/fav/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/cg-blog/assets/img/fav/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/cg-blog/assets/img/fav/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/cg-blog/assets/img/fav/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/cg-blog/assets/img/fav/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/cg-blog/assets/img/fav/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/cg-blog/assets/img/fav/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/cg-blog/assets/img/fav/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/cg-blog/assets/img/fav/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/cg-blog/assets/img/fav/favicon-16x16.png">
+    <link rel="manifest" href="/cg-blog/assets/img/fav/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/cg-blog/assets/img/fav/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <!-- End Fav -->
+    <!-- Styles -->
+    
+      <link rel="stylesheet" href="/cg-blog/assets/post-assets/004-install-docker-and-build-a-simple-node-app-from-dockerfile-on-manjaro/css/main.css" type="text/css" media="screen" /> <link rel="stylesheet" href="/cg-blog/assets/post-assets/004-install-docker-and-build-a-simple-node-app-from-dockerfile-on-manjaro/css/thankful_eyes.css" type="text/css" media="screen" />
+    
+    <!-- End Styles -->
+  </head>
+<body>
+  <div class="post">
+
+<div class="container">
+
+  <h1 id="install-docker-and-build-a-simple-node-app-from-dockerfile-on-manjaro">Install Docker and build a simple node app from dockerfile on Manjaro</h1>
+
+  <p class="date">September 27, 2018</p>
+
+  <p>First you need to install latest docker on Manjaro</p>
+
+  <p><code class="highlighter-rouge">sudo pacman -S docker docker-compose docker-machine</code></p>
+
+  <p>Then we need to enable on the startup docker</p>
+
+  <ol>
+    <li>enable on startup <code class="highlighter-rouge">$ sudo systemctl enable docker</code></li>
+    <li>start docker service <code class="highlighter-rouge">$ sudo systemctl start docker</code></li>
+    <li>check the docker service status <code class="highlighter-rouge">$ sudo systemctl status docker</code> (must be active)</li>
+    <li>quit</li>
+  </ol>
+
+  <p>Once pacman has been completed the installation of Docker on our system we need to do <a href="https://docs.docker.com/install/linux/linux-postinstall/">Post-installation steps</a>. now you should be able to use docker with <code class="highlighter-rouge">sudo</code> before docker command, but I do not like that, instead I need to create a ‘docker’ group and add my user to this new group and reboot or logout and login to make changes take effect, so.</p>
+
+  <p>Check versions of Docker you have:</p>
+  <ul>
+    <li><code class="highlighter-rouge">$ docker -v</code>
+      <ul>
+        <li>Docker version 18.06.1-ce, build e68fc7a215</li>
+      </ul>
+    </li>
+    <li><code class="highlighter-rouge">$ docker-machine -v</code>
+      <ul>
+        <li>docker-machine version 0.15.0, build HEAD</li>
+      </ul>
+    </li>
+    <li><code class="highlighter-rouge">$ docker-compose -v</code>
+      <ul>
+        <li>docker-compose version 1.22.0, build unknown</li>
+      </ul>
+    </li>
+  </ul>
+
+  <p>Use Docker without sudo:</p>
+
+  <ol>
+    <li>Create docker group <code class="highlighter-rouge">$ sudo groupadd docker</code></li>
+    <li>Add your user to docker group <code class="highlighter-rouge">$ sudo usermod -aG docker $USER</code></li>
+    <li>logout or reboot to changes take effect</li>
+  </ol>
+
+  <p>Now, create a <a href="https://hub.docker.com">Docker Hub</a> account.</p>
+
+  <p>In a directory that you preffered, clone git@github.com:carlosgomez2/docker-course.git and cd into docker course directory. At this point we only work for this task in folder ‘dockerfile-assignment-1’, so enter directory and build the docker image</p>
+
+  <ol>
+    <li><code class="highlighter-rouge">$ docker build . -t node-6-app</code> to build image</li>
+    <li><code class="highlighter-rouge">$ docker container run -p 80:3000 --rm node-6-app</code></li>
+    <li>in browser go to localhost:80, you will see the app working</li>
+  </ol>
+
+  <p><img src="Screenshot_20180920_115443.png" alt="" /></p>
+
+  <p><img src="Screenshot_20180920_115554.png" alt="" /></p>
+
+  <p><img src="Screenshot_20180920_115743.png" alt="" /></p>
+
+  <p><img src="Screenshot_20180920_115838.png" alt="" /></p>
+
+  <p>Then we need to push the app image container to Docker Hub, login in console, <code class="highlighter-rouge">$ docker login</code> add your credentials (be aware: if you are pushing from a remote or untrusted machine be sure to <code class="highlighter-rouge">docker logout</code> after you are done). Push your app <code class="highlighter-rouge">$ docker push carlosgg/node-6-app:latest</code></p>
+
+  <p>Optional:</p>
+
+  <p>We can remove image container locally and pull it from docker hub in this way:</p>
+
+  <ol>
+    <li>remove local image container <code class="highlighter-rouge">docker image rm carlosgg/node-6-app</code></li>
+    <li>list your images to ensure to you had removed image <code class="highlighter-rouge">docker image ls</code></li>
+    <li>now run the image by pulling from Docker Hub <code class="highlighter-rouge">docker container run --rm -p 80:3000 carlosgg/node-6-app</code></li>
+    <li>you will see in the CLI ‘Unable to find image … locally’ and then ‘Pulling from carlosgg/node-6-app’</li>
+    <li>open browser and go to localhost:80</li>
+  </ol>
+
+  <h3 id="conclusion">Conclusion</h3>
+
+  <p>Few steps to install docker and enable on Manjaro, download examples repo and use one of them to build a image container and push it to Docker Hub.</p>
+
+  <hr />
+
+  <h4 class="date" id="carlos-gomez-2018">Carlos Gomez 2018</h4>
+</div>
+
+</div>
+
+</body>
+  
+    <!-- Custom JS -->
+    <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="/cg-blog/assets/js/common.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-124592042-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-124592042-1');
+    </script>
+  
+</html>
