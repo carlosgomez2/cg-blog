@@ -21,8 +21,7 @@ body {
   color: #fdfdfd;
   line-height: 1.5;
   -webkit-tap-highlight-color: #16a085;
-  font-size: 16px; }
-
+  font-size: 21px; }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Cantarell", sans-serif;
@@ -78,3 +77,6 @@ code, samp {
 
 pre {
   margin: 0; }
+
+figure {
+  margin: unset; }
