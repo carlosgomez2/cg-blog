@@ -1,0 +1,28 @@
+mixin nav-content()
+	ul.bmenu
+		li: a(href="#about").menu-link About me
+		li: a(href="#latest-work").menu-link Projects
+		li: a(href="#script").menu-link Scripts
+		li: a(href="#articles").menu-link Articles
+		li: a(href="#contact").menu-link Contact
+
+//- is.open class
+.mobile-nav#mobile-nav
+	+nav-content()
+
+header.shadow
+	.header-position
+		h1.logo
+
+		nav.site-nav
+			+nav-content()
+
+		.social-wrap
+			a(href="https://github.com/carlosgomez2" target="_blank" rel="noopener noreferrer" ).social.icon-github
+			a(href="https://gitlab.com/rasalghul" target="_blank" rel="noopener noreferrer" ).social.icon-gitlab_02
+			a(href="https://www.linkedin.com/in/carlos-gómez-671569108" target="_blank" rel="noopener noreferrer" ).social.icon-linkedin
+			a(href="https://twitter.com/xxrasalghulxx" target="_blank" rel="noopener noreferrer" ).social.icon-twitter
+			a(onclick='swal({title: "Find me on Telegram", text: "@xXRasAlGhulXx", imageUrl: "http://i.imgur.com/D9yFQTv.png"})').social.icon-telegram
+			a(href="https://www.instagram.com/cg_rasalghul/" target="_blank" rel="noopener noreferrer" ).social.icon-instagram
+
+		.mobile-nav-toggle: span

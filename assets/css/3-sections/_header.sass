@@ -21,7 +21,6 @@
       justify-content: space-between
 
     .logo
-      +hide-text
       max-width: 135px
       background:
         image: url('../img/logo.svg')
@@ -52,7 +51,7 @@
           transition: background 175ms cubic-bezier(0.31, 0.07, 0.67, 0.91)
 
           a
-          	color: $accent-color
+            color: $accent-color
 
           a:hover, a:active
             color: $primary-color
@@ -64,7 +63,7 @@
         li:hover
           background: darken($accent-color, 4%)
           a
-          	color: lighten($primary-color, 0.4)
+            color: lighten($primary-color, 0.4)
 
     .social
       display: block
@@ -91,10 +90,13 @@
     .icon-instagram:hover
       color: $instagram
 
-    .icon-twitter, .icon-telegram, .icon-linkedin, .icon-github, .icon-instagram
+    .icon-gitlab_02:hover
+      color: $gitlab
+
+    .icon-twitter, .icon-telegram, .icon-linkedin, .icon-github, .icon-instagram, .icon-gitlab_02
       color: $social-states
 
-    .icon-twitter:hover, .icon-telegram:hover, .icon-linkedin:hover, .icon-github:hover
+    .icon-twitter:hover, .icon-telegram:hover, .icon-linkedin:hover, .icon-github:hover, .icon-gitlab_02:hover
       transition: all 0.3s ease-in-out
 
     .mobile-nav-toggle

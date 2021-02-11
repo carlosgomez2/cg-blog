@@ -20,3 +20,18 @@ cuando pongo los vinculos absolutos se recorre un directorio y no encuentra las 
 - CAMBIAR TODO AL AMBIENTE DE PRODUCCION, lo cual es lo que estoy haciendo, {{ site.baseurl }} va a estar prefijado en todos los vinculos y src, ya no va a funcionar el ambiente de desarrollo, cuando suba a github-pages en teoria deberia de funcionar las rutas
 
 - En los styles que estan embebidos en .md o en el post .html hay que cambiar el path de src /cg-blog/assets/...ahi no funciona {{ site.baseurl }}
+
+
+
+## TODO:
+1. conseguir la direccion de ERM
+2. conseguir la direccion de PML
+3. cambiar la imagen de ERM en el work
+4. cambiar la imagen de PML en el work
+5. corregir en otros proyectos (no se visualizan bien los assets)
+6. corregir los posts
+7. crear al menos 3 posts mas
+8. desplegar a GH
+9. comprar un dominio (por 3 o mas años)
+10. vincular el dominio
+11. corregir las fuentes TTF

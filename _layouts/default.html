@@ -24,6 +24,7 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="{{ site.baseurl }}/assets/img/fav/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@500&family=Roboto+Slab:wght@500&display=swap" rel="stylesheet"> 
     <!-- End Fav -->
     <!-- Styles -->
     {% if page.type == "post" %}
@@ -68,4 +69,8 @@
       gtag('config', 'UA-124592042-1');
     </script>
   {% endif %}
+  <script>
+    console.log("BaseURL: " + "{{site.baseurl}}")
+    console.log("Page Styles: " + "{{page.styles}}")
+  </script>
 </html>

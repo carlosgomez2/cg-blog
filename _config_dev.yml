@@ -1,0 +1,21 @@
+# This file is for working on Development env
+
+timezone: "America/Mexico_City"
+name: Carlos Gomez
+title: Carlos Gomez a Ruby on Rails Developer
+description: A simple portfolio of a Ruby on Rails web developer, here I show my latest work and projects, I keep my notes and guides and maybe a little more.
+markdown: kramdown
+highlighter: rouge
+exclude: [
+    "node_modules",
+    "gulpfile.js",
+    "package.json",
+    "README.md",
+    "Gemfile",
+    "Gemfile.lock",
+    "notes.md",
+    "CNAME"
+  ]
+
+url: "https://carlosgomez2.github.io/cg-blog"
+baseurl: ""
