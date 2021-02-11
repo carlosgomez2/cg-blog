@@ -121,16 +121,17 @@ gulp.task('watch', function(done) {
 // Production
 gulp.task('jekyllProd', function (done) {
   browserSync.notify(messages.jekyllProd);
-  return cp.spawn("bundle", ["exec", "jekyll", "build", "--drafts", "--config", "_config.yml"], { stdio: "inherit" }).on('close', done);
+  return cp.spawn("bundle", ["exec", "jekyll", "build", "--config", "_config.yml", "JEKYLL_ENV=production", "--verbose", "--trace"], { stdio: "inherit" }).on('close', done);
 });
 
 // Sass Production
 gulp.task('sassProd', async function() {
-  return gulp.src(paths.styles.dest[1])
+  return gulp.src(paths.styles.src) //'assets/css/main.sass'
     .pipe(sass({
         includePaths: [bourbon],
-        onError: browserSync.notify
+        outputStyle: 'compressed'
       }).on('error', sass.logError))
+    // .pipe(sass().on('error', sass.logError))
 
     .pipe(prefix({
         browsers: ['last 15 versions', '> 1%', 'ie 8', 'ie 7'],
@@ -138,10 +139,11 @@ gulp.task('sassProd', async function() {
       }))
 
     .pipe(rename({suffix: '.min', prefix : ''}))
-    .pipe(minifycss())
+    .pipe(cssnano())
 
-    .pipe(gulp.dest(paths.styles.dest[0]))
-    .pipe(gulp.dest(paths.styles.dest[1]))
+    .pipe(gulp.dest('assets/css/'))
+    .pipe(gulp.dest('_site/assets/css/'))
+    .pipe(browserSync.reload({ stream: true }))
 });
 
 gulp.task('jsProd', async function() {
@@ -152,7 +154,7 @@ gulp.task('jsProd', async function() {
     .pipe(gulp.dest(paths.scripts.dest))
     .pipe(rename({suffix: '.min'}))
     .pipe(uglify())
-    .pipe(gulp.dest(paths.scripts.dest));
+    .pipe(gulp.dest(paths.scripts.dest))
 });
 
 // Serve
