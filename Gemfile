@@ -5,5 +5,5 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'github-pages', group: :jekyll_plugins
+gem 'github-pages', '~> 211', group: :jekyll_plugins
 gem 'bourbon'

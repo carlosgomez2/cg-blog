@@ -7,22 +7,22 @@
     <title> How I configure Vim @  CG</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <!-- Fav -->
-    <link rel="apple-touch-icon" sizes="57x57" href="/cg-blog/assets/img/fav/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/cg-blog/assets/img/fav/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/cg-blog/assets/img/fav/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/cg-blog/assets/img/fav/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/cg-blog/assets/img/fav/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/cg-blog/assets/img/fav/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/cg-blog/assets/img/fav/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/cg-blog/assets/img/fav/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/cg-blog/assets/img/fav/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="/cg-blog/assets/img/fav/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/cg-blog/assets/img/fav/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/cg-blog/assets/img/fav/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/cg-blog/assets/img/fav/favicon-16x16.png">
-    <link rel="manifest" href="/cg-blog/assets/img/fav/manifest.json">
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/img/fav/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/img/fav/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/img/fav/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/img/fav/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/img/fav/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/img/fav/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/img/fav/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/img/fav/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/fav/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/assets/img/fav/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/fav/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/assets/img/fav/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/fav/favicon-16x16.png">
+    <link rel="manifest" href="/assets/img/fav/manifest.json">
     <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/cg-blog/assets/img/fav/ms-icon-144x144.png">
+    <meta name="msapplication-TileImage" content="/assets/img/fav/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@500&family=Roboto+Slab:wght@500&display=swap" rel="stylesheet"> 
     <!-- End Fav -->
@@ -44,48 +44,48 @@
 
   <p>Download <a href="https://github.com/VundleVim/Vundle.vim">Vundler</a> from clone repo:</p>
 
-  <p><code class="highlighter-rouge">git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim</code></p>
+  <p><code class="language-plaintext highlighter-rouge">git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim</code></p>
 
   <h2 id="create-and-set-vimrc">Create and set .vimrc</h2>
 
-  <p><code class="highlighter-rouge">​cd &amp;&amp; touch .vimrc</code>​</p>
+  <p><code class="language-plaintext highlighter-rouge">​cd &amp;&amp; touch .vimrc</code>​</p>
 
   <h2 id="the-configuration">The configuration</h2>
 
   <div class="code-container">
     <div class="language-viml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c">" be iMproved, no compatibility with VI</span>
-    <span class="k">set</span> nocompatible
+    <span class="k">set</span> <span class="nb">nocompatible</span>
 
     <span class="c">" Auto indention should be on</span>
-    <span class="k">set</span> autoindent
+    <span class="k">set</span> <span class="nb">autoindent</span>
 
     <span class="c">" Allows move with the mouse in all windows</span>
-    <span class="k">set</span> mouse<span class="p">=</span><span class="k">a</span>
+    <span class="k">set</span> <span class="nb">mouse</span><span class="p">=</span><span class="k">a</span>
 
     <span class="c">" Theme and syntax</span>
-    syntax <span class="k">on</span>
+    <span class="nb">syntax</span> <span class="k">on</span>
 
     <span class="c">" Syntax highlighting and theme</span>
-    syntax enable
+    <span class="nb">syntax</span> enable
 
     <span class="c">" Lovely linenumbers</span>
     <span class="k">set</span> <span class="k">nu</span>
 
     <span class="c">" Searching, highligths the areas that you search for</span>
-    <span class="k">set</span> hlsearch
+    <span class="k">set</span> <span class="nb">hlsearch</span>
 
     <span class="c">" Highlights search as you type</span>
-    <span class="k">set</span> incsearch
+    <span class="k">set</span> <span class="nb">incsearch</span>
 
     <span class="c">" ignores the case in the file</span>
-    <span class="k">set</span> ignorecase
+    <span class="k">set</span> <span class="nb">ignorecase</span>
 
     <span class="c">" If you start with CamelCase it will assume that you wanted camelcased</span>
-    <span class="k">set</span> smartcase
+    <span class="k">set</span> <span class="nb">smartcase</span>
 
     <span class="c">" For initialize blunde</span>
     <span class="k">filetype</span> off
-    <span class="k">set</span> rtp<span class="p">+=~</span><span class="sr">/.vim/</span>bundle/Vundle<span class="p">.</span><span class="k">vim</span>
+    <span class="k">set</span> <span class="nb">rtp</span><span class="p">+=~</span><span class="sr">/.vim/</span>bundle/Vundle<span class="p">.</span><span class="k">vim</span>
     <span class="k">call</span> vundle#rc<span class="p">()</span>
 
     <span class="c">" Dependencies of snipmate</span>
@@ -127,7 +127,7 @@
     Bundle <span class="s1">'scrooloose/nerdtree'</span>
     autocmd vimenter * NERDTree
 
-    autocmd bufenter * <span class="k">if</span> <span class="p">(</span>winnr<span class="p">(</span><span class="s2">"$"</span><span class="p">)</span> <span class="p">==</span> <span class="m">1</span> &amp;&amp; exists<span class="p">(</span><span class="s2">"b:NERDTree"</span><span class="p">)</span> &amp;&amp; <span class="nv">b:NERDTree</span><span class="p">.</span>isTabTree<span class="p">())</span> <span class="p">|</span> <span class="k">q</span> <span class="p">|</span> <span class="k">endif</span>
+    autocmd bufenter * <span class="k">if</span> <span class="p">(</span><span class="nb">winnr</span><span class="p">(</span><span class="s2">"$"</span><span class="p">)</span> <span class="p">==</span> <span class="m">1</span> &amp;&amp; <span class="nb">exists</span><span class="p">(</span><span class="s2">"b:NERDTree"</span><span class="p">)</span> &amp;&amp; <span class="nv">b:NERDTree</span><span class="p">.</span>isTabTree<span class="p">())</span> <span class="p">|</span> <span class="k">q</span> <span class="p">|</span> <span class="k">endif</span>
 
     <span class="c">" Quantum theme</span>
     Bundle <span class="s1">'tyrannicaltoucan/vim-quantum'</span>
@@ -136,15 +136,15 @@
     Plugin <span class="s1">'scrooloose/nerdcommenter'</span>
     <span class="k">filetype</span> plugin <span class="k">on</span>
     <span class="k">let</span> mapleader<span class="p">=</span><span class="s2">","</span>
-    <span class="k">set</span> timeout timeoutlen<span class="p">=</span><span class="m">1500</span>
+    <span class="k">set</span> <span class="nb">timeout</span> <span class="nb">timeoutlen</span><span class="p">=</span><span class="m">1500</span>
 </code></pre></div>    </div>
   </div>
 
   <h2 id="install-plugins">Install Plugins</h2>
 
-  <p>Launch <code class="highlighter-rouge">vim</code> and run <code class="highlighter-rouge">:PluginInstall</code></p>
+  <p>Launch <code class="language-plaintext highlighter-rouge">vim</code> and run <code class="language-plaintext highlighter-rouge">:PluginInstall</code></p>
 
-  <p>To install from command line: <code class="highlighter-rouge">vim +PluginInstall +qall</code></p>
+  <p>To install from command line: <code class="language-plaintext highlighter-rouge">vim +PluginInstall +qall</code></p>
 
   <h2 id="conclusion">Conclusion</h2>
 
@@ -165,7 +165,7 @@
   
     <!-- Custom JS -->
     <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="/cg-blog/assets/js/common.js"></script>
+    <script src="/assets/js/common.js"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-124592042-1"></script>
@@ -178,7 +178,7 @@
     </script>
   
   <script>
-    console.log("BaseURL: " + "/cg-blog")
+    console.log("BaseURL: " + "")
     console.log("Page Styles: " + "<link rel="stylesheet" href="/cg-blog/assets/post-assets/006-vim/css/main.css" type="text/css" media="screen" /> <link rel="stylesheet" href="/cg-blog/assets/post-assets/006-vim/css/github.css" type="text/css" media="screen" />")
   </script>
 </html>

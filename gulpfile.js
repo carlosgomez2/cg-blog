@@ -52,7 +52,7 @@ var messages = {
 gulp.task('jekyllDev', function (done) {
   browserSync.notify(messages.jekyllDev);
   cp.spawn("bundle", ["exec", "jekyll", "build", "--watch", "--drafts", "--config", "_config_dev.yml"], { stdio: "inherit" });
-  cp.spawn("bundle", ["exec", "jekyll", "s", "--livereload", "--livereload-port 8080", "--port 4001"], { stdio: "inherit" });
+  cp.spawn("bundle", ["exec", "jekyll", "s"], { stdio: "inherit" });
   done();
 });
 
