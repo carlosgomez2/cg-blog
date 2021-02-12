@@ -18,4 +18,4 @@ exclude: [
   ]
 
 url: "https://carlosgomez2.github.io/cg-blog"
-baseurl: ""
+baseurl: "/cg-blog"
